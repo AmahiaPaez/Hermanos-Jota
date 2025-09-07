@@ -1,6 +1,6 @@
 # 🛒 Ecommerce Hermanos Jota
 
-Un sitio web de comercio electrónico moderno y funcional desarrollado como proyecto académico.
+Un sitio web de comercio de muebles desarrollado como proyecto académico.
 
 ## 👥 Equipo de Desarrollo
 
