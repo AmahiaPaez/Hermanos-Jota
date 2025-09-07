@@ -80,7 +80,6 @@ button:hover {
   border-radius: 5px;
 }
 
-/* 📱 Estilos responsive */
 @media (max-width: 600px) {
   .form-group {
     flex-direction: column;
