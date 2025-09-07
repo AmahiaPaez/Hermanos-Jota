@@ -8,8 +8,7 @@ body {
   font-family: 'Inter', sans-serif;
 }
 
-
-form{
+form {
   background-color: #F5E6D3;
   border: 2px solid #D4BFAA;
   padding: 2rem;
@@ -19,8 +18,8 @@ form{
   width: 90%;
   margin: 120px auto 100px auto; 
   box-sizing: border-box;
-
 }
+
 .form-group {
   display: flex;
   align-items: center;
@@ -35,32 +34,32 @@ form{
 }
 
 .form-group input,
-.form-group textarea{
+.form-group textarea {
   flex: 10; 
   padding: 0.5rem;
   border: 1px solid #ccc;
   border-radius: 6px;
 }
 
-button{
-    width: 25%;
-    border-radius: 6px;
-    background-color:#D4A437 ;
-    border: 1px solid #D4A437 ;
-    padding: 0.8rem;
-    display:block ;
-    margin: 0 auto;
-    text-align: center;
-    font-weight: bold;
-    color: white;
-    
+button {
+  width: 25%;
+  border-radius: 6px;
+  background-color:#D4A437 ;
+  border: 1px solid #D4A437 ;
+  padding: 0.8rem;
+  display:block ;
+  margin: 0 auto;
+  text-align: center;
+  font-weight: bold;
+  color: white;
 }
-button:hover{
-    background-color:	#A0522D ;
-    cursor: pointer;
-    transition: background 0.3s;
+
+button:hover {
+  background-color:#A0522D ;
+  cursor: pointer;
+  transition: background 0.3s;
 }
-  
+
 #estado {
   margin-top: 0.5rem;
   font-weight: bold;
@@ -79,4 +78,26 @@ button:hover{
   background-color: #c8e6c9;
   padding: 0.5rem;
   border-radius: 5px;
+}
+
+/* 📱 Estilos responsive */
+@media (max-width: 600px) {
+  .form-group {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .form-group label {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+  }
+
+  button {
+    width: 100%;
+  }
 }
