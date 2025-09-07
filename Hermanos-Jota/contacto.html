@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Styles/footer.css">
-    <title>Document</title>
+    <title>Contacto</title>
+    <link rel="stylesheet" href="Styles/contacto.css">
     <link rel="stylesheet" href="Styles/header.css">
+    <link rel="stylesheet" href="Styles/footer.css">
 </head>
 <body>
-    <header>
+     <header>
         <nav id="nav">
             <div class="content-logo-links">
                 <div class="box-logo">
@@ -16,13 +17,13 @@
                 </div>
                 <ul class="box-links">
                     <li class="box-link">
-                        <a href="#">Inicio</a>
+                        <a href="index.html">Inicio</a>
                     </li>
                     <li class="box-link">
                         <a href="#">Productos</a>
                     </li>
                     <li class="box-link">
-                        <a href="contacto.html">Contactame</a>
+                        <a href="#">Contactame</a>
                     </li>
                 </ul>
             </div>
@@ -40,9 +41,30 @@
             </div>
         </nav>
     </header>
-    <h1>La chispa</h1>
 
-    <footer>
+
+<form id="formularioContacto">
+  
+  <div class="form-group">
+   <label for="nombreUsuario">Nombre</label>
+   <input type="text" id="nombreUsuario" name="nombre">
+  </div>
+  
+  <div class="form-group">
+    <label for="emailUsuario">Email</label>
+    <input type="email" id="emailUsuario" name="mail">
+  </div>
+  
+  <div class="form-group">
+    <label for="mensaje">Mensaje</label>
+    <textarea id="mensajeUsuario" name="mensaje" rows="4"></textarea>
+  </div>
+  
+  <button type="submit">Enviar</button>
+  <div id="estado"></div>
+  
+</form>
+<footer>
         <div class="footerContainer">
             <div class="sec Aboutus">
                 <h2>Conocenos</h2>
@@ -94,6 +116,7 @@
     <div class="copyriht">
         <p><strong>© 2025 Hermanos Jota</strong>. Todos los derechos reservados. Este manual es propiedad de Hermanos Jota Muebles.</p>
     </div>
-    <script src="js/header.js"></script>
+   <script src="js/contacto.js"></script>
+   <script src="js/header.js"></script>
 </body>
 </html>

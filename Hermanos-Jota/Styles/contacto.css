@@ -1,0 +1,82 @@
+body {
+  display: flex;
+  flex-direction: column; 
+  align-items: center; 
+  margin: 0;
+  background-color: #fff;
+  color: #3e2723;
+  font-family: 'Inter', sans-serif;
+}
+
+
+form{
+  background-color: #F5E6D3;
+  border: 2px solid #D4BFAA;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  width: 90%;
+  margin: 120px auto 100px auto; 
+  box-sizing: border-box;
+
+}
+.form-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  width: 120px; 
+  margin-bottom: 0; 
+  font-weight: bold;
+  color: #A0522D;
+}
+
+.form-group input,
+.form-group textarea{
+  flex: 10; 
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+button{
+    width: 25%;
+    border-radius: 6px;
+    background-color:#D4A437 ;
+    border: 1px solid #D4A437 ;
+    padding: 0.8rem;
+    display:block ;
+    margin: 0 auto;
+    text-align: center;
+    font-weight: bold;
+    color: white;
+    
+}
+button:hover{
+    background-color:	#A0522D ;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+  
+#estado {
+  margin-top: 0.5rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+#estado.error {
+  color: #c62828;
+  background-color: #ffcdd2;
+  padding: 0.5rem;
+  border-radius: 5px;
+}
+
+#estado.ok {
+  color: #2e7d32;
+  background-color: #c8e6c9;
+  padding: 0.5rem;
+  border-radius: 5px;
+}
