@@ -1,0 +1,335 @@
+/* Header CSS - Hermanos Jota */
+/* Variables de colores */
+:root {
+    --primary-color: #C47A6D;
+    --secondary-color: #D4A437;
+    --tertiary-color: #A0522D;
+    --text-color: #333;
+    --bg-color: #f8f6f3;
+    --white: #ffffff;
+}
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Arial", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+}
+
+/* Header principal */
+header {
+    background-color: var(--bg-color);
+    border-bottom: 1px solid #eee;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Navegación */
+nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+/* Logo */
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 60px;
+    width: auto;
+}
+
+/* Enlaces de navegación */
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    margin: 0;
+}
+
+.nav-links li {
+    list-style: none;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 16px;
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--tertiary-color);
+    transform: translateY(-2px);
+    background-color: rgba(196, 122, 109, 0.1);
+}
+
+/* Sección de búsqueda */
+.nav-search {
+    display: flex;
+    align-items: center;
+    background: var(--white);
+    border: 2px solid var(--primary-color);
+    border-radius: 10px;
+    padding: 8px 12px;
+    gap: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.search-container input {
+    border: none;
+    outline: none;
+    background: transparent;
+    color: var(--secondary-color);
+    font-weight: 600;
+    font-size: 14px;
+    width: 150px;
+}
+
+.search-container input::placeholder {
+    color: var(--secondary-color);
+    font-weight: 600;
+}
+
+.search-icon img,
+.cart-icon img {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.search-icon img:hover,
+.cart-icon img:hover {
+    transform: scale(1.1);
+}
+
+.divider {
+    width: 2px;
+    height: 30px;
+    background-color: var(--tertiary-color);
+    margin: 0 5px;
+}
+
+/* Carrito */
+.cart-icon {
+    position: relative;
+}
+
+.cart-count {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background: var(--tertiary-color);
+    color: var(--white);
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    font-size: 12px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--bg-color);
+}
+
+/* Menú hamburguesa */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 5px;
+    z-index: 1001;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: var(--primary-color);
+    margin: 3px 0;
+    transition: all 0.3s ease;
+    border-radius: 2px;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .nav-links {
+        gap: 20px;
+    }
+    
+    .nav-search {
+        gap: 8px;
+    }
+    
+    .search-container input {
+        width: 120px;
+    }
+}
+
+@media (max-width: 768px) {
+    nav {
+        padding: 10px 20px;
+    }
+    
+    .hamburger {
+        display: flex;
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: rgba(255, 255, 255, 0.9);
+        border-radius: 5px;
+        padding: 8px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    
+    .nav-links {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(248, 246, 243, 0.98);
+        backdrop-filter: blur(10px);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease-in-out;
+        z-index: 999;
+    }
+    
+    .nav-links.active {
+        transform: translateX(0);
+    }
+    
+    .nav-links a {
+        font-size: 24px;
+        padding: 15px 25px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 10px;
+        min-width: 200px;
+        text-align: center;
+        backdrop-filter: blur(5px);
+    }
+    
+    .nav-links a:hover {
+        background: rgba(196, 122, 109, 0.2);
+        transform: scale(1.05);
+    }
+    
+    .logo {
+        position: fixed;
+        top: 15px;
+        left: 20px;
+        z-index: 1001;
+        background: rgba(255, 255, 255, 0.9);
+        padding: 5px 10px;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    
+    .logo img {
+        height: 45px;
+    }
+    
+    .nav-search {
+        position: fixed;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 1001;
+        padding: 12px 15px;
+        min-width: 280px;
+    }
+    
+    .search-container input {
+        width: 180px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hamburger {
+        top: 15px;
+        right: 15px;
+    }
+    
+    .logo {
+        top: 10px;
+        left: 15px;
+    }
+    
+    .logo img {
+        height: 40px;
+    }
+    
+    .nav-links a {
+        font-size: 20px;
+        min-width: 180px;
+        padding: 12px 20px;
+    }
+    
+    .nav-search {
+        min-width: 260px;
+        padding: 10px 12px;
+        bottom: 20px;
+    }
+    
+    .search-container input {
+        width: 140px;
+        font-size: 13px;
+    }
+    
+    .search-icon img,
+    .cart-icon img {
+        width: 20px;
+        height: 20px;
+    }
+    
+    .cart-count {
+        width: 16px;
+        height: 16px;
+        font-size: 11px;
+    }
+    
+    .divider {
+        height: 25px;
+    }
+}

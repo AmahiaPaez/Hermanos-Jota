@@ -1,220 +1,219 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hermanos Jota | Mueblería </title>
-    <link rel="stylesheet" href="./Styles/header.css">
+    <title>Hermanos Jota - Muebles Artesanales</title>
+    <link rel="stylesheet" href="Styles/header_new.css">
+    <link rel="stylesheet" href="Styles/hero.css">
     <link rel="stylesheet" href="Styles/footer.css">
     <link rel="stylesheet" href="Styles/carrusel.css">
-    <link
-    href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
-    rel="stylesheet"/>
-
+</head>
+<body>
+    <header>
         <nav>
-          <div class="navHeader">
-            <div class="navLogo">
-              <a href="#" class="logo">
-                <img src="imagenes/logo.svg" alt="Hermanos Jota" class="logo-image">
-              </a>
+            <!-- Logo -->
+            <div class="logo">
+                <a href="index.html">
+                    <img src="imagenes/logo.svg" alt="Hermanos Jota">
+                </a>
             </div>
-            <div class="navMenuBtn" id="menu-btn">
-              <i class="ri-menu-line"></i>
+            
+            <!-- Menú Hamburguesa -->
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
-          </div>
-          <ul class="navLinks" id="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#productos">Productos</a></li>
-            <li><a href="contacto.html">Contacto</a></li>
-          </ul>
-          <div class="nav__search" id="nav-search">
-            <input type="text" placeholder="Search" />
-            <span class="search-icon">
-              <img src="imagenes/Lupa.png" alt="Buscar" class="search-image">
-            </span>
-            <div class="cart-icon">
-              <img src="imagenes/Carrito.png" alt="Carrito" class="cart-image">
-              <span class="cart-count">0</span>
+            
+            <!-- Enlaces de navegación -->
+            <ul class="nav-links">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="producto.html">Productos</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+            
+            <!-- Búsqueda y Carrito -->
+            <div class="nav-search">
+                <div class="search-container">
+                    <span class="search-icon">
+                        <img src="imagenes/Lupa.png" alt="Buscar">
+                    </span>
+                    <input type="text" placeholder="Buscar productos...">
+                </div>
+                <div class="divider"></div>
+                <div class="cart-icon">
+                    <img src="imagenes/Carrito.png" alt="Carrito">
+                    <span class="cart-count">0</span>
+                </div>
             </div>
-          </div>
         </nav>
 
-    <header class="section__container header__container" id="home">
-      <div class="header__image">
-        <img src="imagenes/Diseño sin título.png" alt="header" />
-      </div>
-      <div class="header__content">
-        <div>
-          <h1>Muebles que cuentan historias</h1>
-          <p>En Hermanos Jota creamos piezas únicas que unen tradición y futuro. Cada mueble nace de manos expertas, materiales nobles y un compromiso real con la sustentabilidad. No es solo diseño: es un legado que vive en tu hogar.</p>
-        </div>
-      </div>
     </header>
-
-
-    <section class="section__container about__container" id="about">
-      <div class="about__header">
-        <div>
-          <h2 class="section__header">Herencia viva, diseño consciente</h2>
-          <p class="section__description">En Hermanos Jota transformamos maderas nobles y recuperadas en muebles atemporales, donde tradición, diseño y sustentabilidad se encuentran para crear piezas que acompañan tu historia y tu hogar.</p>
+    
+    <!-- Sección Hero -->
+    <section class="hero" id="home">
+        <div class="hero-container">
+            <div class="hero-image">
+                <img src="imagenes/Diseño sin título.png" alt="Muebles Hermanos Jota">
+            </div>
+            <div class="hero-content">
+                <h1>Muebles que cuentan historias</h1>
+                <p>En Hermanos Jota creamos piezas únicas que unen tradición y futuro. Cada mueble nace de manos expertas, materiales nobles y un compromiso real con la sustentabilidad. No es solo diseño: es un legado que vive en tu hogar.</p>
+                <a href="producto.html" class="cta-button">Ver Productos</a>
+            </div>
         </div>
-        <button class="about__btn"><a href="#productos">Ver Muebles</a></button>
-      </div>
-      <div class="about__content">
-        <div class="about__image">
-          <img src="imagenes/8 a 11.jpg" alt="about" />
-        </div>
-        <div class="aboutGrid">
-          <div class="about__card">
-            <h3>1.</h3>
-            <h4>Artesanía con alma</h4>
-            <p>Cada mueble nace de manos expertas y materiales nobles.</p>
-          </div>
-          <div class="about__card">
-            <h3>2.</h3>
-            <h4>Tradición e innovación</h4>
-            <p>Inspirados en la calidez de los años 60, incorporamos diseño atemporal y funcionalidad moderna.</p>
-          </div>
-          <div class="about__card">
-            <h3>3.</h3>
-            <h4>Compromiso sustentable</h4>
-            <p>Usamos maderas certificadas, recuperadas y acabados naturales, cuidando el planeta y futuras generaciones.</p>
-          </div>
-          <div class="about__card">
-            <h3>4.</h3>
-            <h4>Legado para tu hogar:</h4>
-            <p>Cada pieza envejece con gracia, transformándose en parte de tu historia y ritual diario.</p>
-          </div>
-        </div>
-      </div>
     </section>
-
-    <section class="carousel-section">
-  <h2 class="section__header" id="productos">Los mejores productos</h2>
-  
-  <div class="carousel-container">
-    <button class="carousel-arrow prev" onclick="moveCarousel(-1)">
-      <img src="imagenes/row.png" id="anterior" alt="Anterior">
-    </button>
-    <button class="carousel-arrow next" onclick="moveCarousel(1)">
-      <img src="imagenes/row.png" alt="Siguiente">
-    </button>
-
+    <main>
+        <div class="conteiner-principal-products">
+            <h2 class="title-principal-products">Featured products</h2>
+            <div class="conteiner-principal">
+                <div class="box-principal">
+                    <img src="./imagenes/Biblioteca-Recoleta.png" alt="">
+                    
+                    <div class="conteiner-text-img-principal">
+                        <div class="box-title-principal">
+                            <h3 class="title-principal">Sofá Patagonia</h3>
+                        </div>
+                        <div class="box-text-principal">
+                            <p>Measures: 220 × 90 × 80 cm</p>
+                            <p>Stuffed: Espuma HR + plumón reciclado</p>
+                            <p>Structure: Madera de eucalipto certificada FSC®</p>
+                            <p>Upholstered: Lino 100% natural premium</p>
+                            <p>Sustainability: Materiales 100% reciclables</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="box-principal">
+                    <div class="conteiner-img-principal">
+                        <img src="./imagenes/Biblioteca-Recoleta.png" alt="">
+                    </div>
+                    <div class="conteiner-text-img-principal">
+                        <div class="box-title-principal">
+                            <h3 class="title-principal">Sofá Patagonia</h3>
+                        </div>
+                        <div class="box-text-principal">
+                            <p>Measures: 220 × 90 × 80 cm</p>
+                            <p>Stuffed: Espuma HR + plumón reciclado</p>
+                            <p>Structure: Madera de eucalipto certificada FSC®</p>
+                            <p>Upholstered: Lino 100% natural premium</p>
+                            <p>Sustainability: Materiales 100% reciclables</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="box-principal">
+                    <div class="conteiner-img-principal">
+                        <img src="./imagenes/Biblioteca-Recoleta.png" alt="">
+                    </div>
+                    <div class="conteiner-text-img-principal">
+                        <div class="box-title-principal">
+                            <h3 class="title-principal">Sofá Patagonia</h3>
+                        </div>
+                        <div class="box-text-principal">
+                            <p>Measures: 220 × 90 × 80 cm</p>
+                            <p>Stuffed: Espuma HR + plumón reciclado</p>
+                            <p>Structure: Madera de eucalipto certificada FSC®</p>
+                            <p>Upholstered: Lino 100% natural premium</p>
+                            <p>Sustainability: Materiales 100% reciclables</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <div class="conteiner-principal-products">
+            <h2 class="title-principal-products">Some Products</h2>
+            <div class="conteiner-carrucel">
+                <div class="conteiner-img-rows btn-carru-iz" id="">
+                    <img src="./imagenes/row.png" alt="" class="row-izq">
+                </div>
+                <div class="conteiner-carrusel">
+                    <a href="#" class="conteiner-carrusel-img n0">
+                        <img src="./imagenes/Biblioteca-Recoleta.png" alt="">
+                    </a>
+                    <a href="#" class="conteiner-carrusel-img n0">
+                        <img src="./imagenes/Escritorio-Costa.png" alt="">
+                    </a>
+                    <a href="#" class="conteiner-carrusel-img n0">
+                        <img src="./imagenes/Mesa-Comedor-Pampa.png" alt="">
+                    </a>
+                    <a href="#" class="conteiner-carrusel-img n0">
+                        <img src="./imagenes/Mesa-de-Centro-Araucaria.png" alt="">
+                    </a>
+                    <a href="#" class="conteiner-carrusel-img n0">
+                        <img src="./imagenes/Sillon-Copacabana.png" alt="">
+                    </a>
+                    
     
-    <div class="carousel-wrapper">
-      <div class="product__grid" id="productCarousel">
-        <!-- Grupo 1 -->
-        <div class="product__card">
-          <h4>aaaa</h4>
-          <p>$00</p>
-          <img src="imagenes/Escritorio Costa.png" alt="product" />
-           <button class="add-to-cart-btn" onclick="addToCart('producto', 1.00)">Agregar</button>
+                </div>
+                <div class="conteiner-img-rows btn-carru-de" id="">
+                    <img src="./imagenes/row.png" alt="" >
+                </div>
+            </div>
         </div>
-        <div class="product__card">
-          <h4>aaaa</h4>
-          <p>$00</p>
-          <img src="imagenes/Sofá Patagonia.png" alt="product" />
-           <button class="add-to-cart-btn" onclick="addToCart('producto', 1.00)">Agregar</button>
-        </div>
-        <div class="product__card">
-          <h4>aaa</h4>
-          <p>$00</p>
-          <img src="imagenes/Butaca Mendoza.png" alt="product" />
-           <button class="add-to-cart-btn" onclick="addToCart('producto', 1.00)">Agregar</button>
-        </div>
-        
-        <!-- Grupo 2 -->
-        <div class="product__card">
-          <h4>aaa</h4>
-          <p>$00</p>
-          <img src="imagenes/Biblioteca Recoleta.png" alt="product" />
-           <button class="add-to-cart-btn" onclick="addToCart('producto', 87.00)">Agregar</button>
-        </div>
-        <div class="product__card">
-          <h4>aaaa</h4>
-          <p>$00</p>
-          <img src="imagenes/Silla de Trabajo Belgrano.png" alt="product" />
-           <button class="add-to-cart-btn" onclick="addToCart('producto', 1.00)">Agregar</button>
-        </div>
-        <div class="product__card">
-          <h4>aaaa</h4>
-          <p>$00</p>
-          <img src="imagenes/Mesa de Noche Aconcagua.png" alt="product" />
-           <button class="add-to-cart-btn" onclick="addToCart('Stackable Chair', 1.00)">Agregar</button>
-        </div>
-        
-        <!-- Grupo 3 -->
-        <div class="product__card">
-          <h4>aaa</h4>
-          <p>$00</p>
-          <img src="imagenes/Mesa Comedor Pampa.png" alt="product" />
-           <button class="add-to-cart-btn" onclick="addToCart('producto', 1.00)">Agregar</button>
-        </div>
-        <div class="product__card">
-          <h4>aaa</h4>
-          <p>$00</p>
-          <img src="imagenes/Sillón Copacabana.png" alt="product" />
-           <button class="add-to-cart-btn" onclick="addToCart('producto', 1.00)">Agregar</button>
-        </div>
-        <div class="product__card">
-          <h4>aaaa</h4>
-          <p>$00</p>
-          <img src="imagenes/Mesa de Centro Araucaria.png" alt="product" />
-           <button class="add-to-cart-btn" onclick="addToCart('producto', 1.00)">Agregar</button>
-        </div>
-      </div>
-    </div>
-    
-    <div class="carousel-indicators">
-      <div class="indicator active" onclick="goToSlide(0)"></div>
-      <div class="indicator" onclick="goToSlide(1)"></div>
-      <div class="indicator" onclick="goToSlide(2)"></div>
-    </div>
-  </>
-</section>
+        <div class="conteiner-principal-products">
+            <h2 class="title-principal-products">Chairs and armchairs</h2>
+            <div class="conteiner-carrucel">
+                
+                <div class="conteiner-img-rows btn-carru-iz" id="">
+                    <img src="./imagenes/row.png" alt="" class="row-izq">
+                </div>
+                <div class="conteiner-carrusel">
+                    <a href="#" class="conteiner-carrusel-img n1">
+                        <img src="./imagenes/Silla-de-Trabajo-Belgrano.png" alt="">
+                    </a>
+                    <a href="#" class="conteiner-carrusel-img n1">
+                        <img src="./imagenes/Sofa-Patagonia.png" alt="">
+                    </a>
+                    <a href="#" class="conteiner-carrusel-img n1">
+                        <img src="./imagenes/Sillon-Copacabana.png" alt="">
+                    </a>
+                    <a href="#" class="conteiner-carrusel-img n1">
+                        <img src="./imagenes/Sillas-Cordoba.png" alt="">
+                    </a>
 
-    <section class="section__container product__container" id="product">
-      <h2 class="section__header"id="productos" >Mesas</h2>
-      <div class="product__grid">
-        <div class="product__card">
-          <h4>aaaa</h4>
-          <p>$00</p>
-          <img src="imagenes/Mesa Comedor Pampa.png" alt="product" />
-           <button class="add-to-cart-btn" onclick="addToCart('producto', 1.00)">Agregar</button>
+                    
+                    <a href="#" class="conteiner-carrusel-img n1">
+                        <img src="./imagenes/Silla-de-Trabajo-Belgrano.png" alt="">
+                    </a>
+                </div>
+                <div class="conteiner-img-rows btn-carru-de" id="">
+                    <img src="./imagenes/row.png" alt="" >
+                </div>
+            </div>
         </div>
-        <div class="product__card">
-          <h4>aaaa</h4>
-          <p>$00</p>
-          <img src="imagenes/Mesa de Centro Araucaria.png" alt="product" />
-           <button class="add-to-cart-btn" onclick="addToCart('producto', 1.00)">Agregar</button>
-        </div>
-        <div class="product__card">
-          <h4>aaaa/h4>
-          <p>$00</p>
-          <img src="imagenes/Mesa de Noche Aconcagua.png" alt="product" />
-           <button class="add-to-cart-btn" onclick="addToCart('producto', 1.00)">Agregar</button>
-        </div>
-      </div>
-      <h2 class="section__header" id="productos" > Sillas y Sillones</h2>
+        <div class="conteiner-principal-products">
+            <h2 class="title-principal-products">Shelves and tables</h2>
+            <div class="conteiner-carrucel">
+                
+                <div class="conteiner-img-rows btn-carru-iz" id="">
+                    <img src="./imagenes/row.png" alt="" class="row-izq">
+                </div>
+                <div class="conteiner-carrusel">
+                    <a href="#" class="conteiner-carrusel-img n2">
+                        <img src="./imagenes/Aparador-Uspallata.png" alt="">
+                    </a>
+                    <a href="#" class="conteiner-carrusel-img n2">
+                        <img src="./imagenes/Biblioteca-Recoleta.png" alt="">
+                    </a>
+                    <a href="#" class="conteiner-carrusel-img n2">
+                        <img src="./imagenes/Escritorio-Costa.png" alt="">
+                    </a>
+                    <a href="#" class="conteiner-carrusel-img n2">
+                        <img src="./imagenes/Mesa-Comedor-Pampa.png" alt="">
+                    </a>
+                    <a href="#" class="conteiner-carrusel-img n2">
+                        <img src="./imagenes/Mesa-de-Noche-Aconcagua.png" alt="">
+                    </a>
+                    <a href="#" class="conteiner-carrusel-img n2">
+                        <img src="./imagenes/Mesa-de-Noche-Aconcagua.png" alt="">
+                    </a>
 
-      <div class="product__grid">
-        <div class="product__card">
-          <h4>aaaa</h4>
-          <p>$00</p>
-          <img src="imagenes/Silla de Trabajo Belgrano.png" alt="product" />
-           <button class="add-to-cart-btn" onclick="addToCart('producto', 1.00)">Agregar</button>
-        </div>
-        <div class="product__card">
-          <h4>aaa</h4>
-          <p>$00</p>
-          <img src="imagenes/Sillas Córdoba.png" alt="product" />
-           <button class="add-to-cart-btn" onclick="addToCart('producto', 1.00)">Agregar</button>
-        </div>
-        <div class="product__card">
-          <h4>aaaa</h4>
-          <p>$00</p>
-          <img src="imagenes/Sillón Copacabana.png" alt="product" />
-           <button class="add-to-cart-btn" onclick="addToCart('producto', 1.00)">Agregar</button>
+                </div>
+                <div class="conteiner-img-rows btn-carru-de" id="">
+                    <img src="./imagenes/row.png" alt="" >
+                </div>
+            </div>
         </div>
     
       </div>
@@ -270,8 +269,8 @@
        <div class="copyright">© 2025 Hermanos Jota. Todos los derechos reservados. Este manual es propiedad de Hermanos Jota Muebles.</div> 
     </footer>
 
-    <script src="main.js"></script>
-    <script src="js/carrusel2.js"></script>
+    <script src="js/header_new.js"></script>
+    <script src="js/carrucel.js"></script>
 
 </body>
 </html>

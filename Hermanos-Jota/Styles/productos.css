@@ -1,25 +1,26 @@
-* { margin: 0; padding: 0; box-sizing: border-box; }
-html, body { height: 100%; }
-{
+/* Eliminar o comentar estas líneas si ya están definidas en otro CSS base o en footer.css */
+/* html, body { height: 100%; } */
+/* body {
   font-family: "Arial", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
   background-color: #f8f6f3;
   color: #333;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.5;
-
-
+} */
+/* Mantener solo los estilos específicos de productos */
 .contenedor {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
 }
-
+/*
 .encabezado {
   background-color: #f8f6f3;
   padding: 20px 0;
   border-bottom: 1px solid #eee;
 }
+
 .encabezado .contenedor { display:flex; align-items:center; justify-content:space-between; gap:20px; }
 .logo { display:flex; align-items:center; gap:12px; }
 .icono-logo { width:50px; height:50px; border-radius:10px; display:flex; align-items:center; justify-content:center;  color:white; font-weight:700; }

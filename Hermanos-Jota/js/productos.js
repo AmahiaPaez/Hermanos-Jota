@@ -1,5 +1,5 @@
 async function cargarProductos() {
-  const response = await fetch("info_Producto.json");
+  const response = await fetch("info_product.json");
   const data = await response.json();
   return new Promise(resolve => setTimeout(() => resolve(data.catalogo.Productos), 600));
 }
@@ -19,7 +19,7 @@ function slugify(text) {
 }
 
 function renderizarDetalle(Producto) {
-  const contenedor = document.getElementById("detalle-Producto");
+  const contenedor = document.getElementById("detalle-producto");
   if (!contenedor) return;
 
   const humanLabel = key => {
@@ -176,7 +176,7 @@ function renderizarCarrusel(Productos, id) {
     const imgSrc = prod.imagen ? prod.imagen : `imagenes/${slugify(prod.nombre)}.png`;
 
     card.innerHTML = `
-      <a class="card-link" href="Producto.html?id=${encodeURIComponent(prod.nombre)}">
+      <a class="card-link" href="producto.html?id=${encodeURIComponent(prod.nombre)}">
         <div class="thumb">
           <img src="${imgSrc}" alt="${prod.nombre}" onerror="this.src='imagenes/placeholder.png'">
         </div>
