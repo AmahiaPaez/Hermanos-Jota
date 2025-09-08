@@ -4,16 +4,45 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Detalle de Producto</title>
-  <link rel="stylesheet" href="productos.css">
+  <link rel="stylesheet" href="Styles/productos.css">
+  <link rel="stylesheet" href="Styles/contacto.css">
+  <link rel="stylesheet" href="Styles/header.css">
+  <link rel="stylesheet" href="Styles/footer.css">
 
 </head>
 <body>
-  
-
-  <div id="official-header-placeholder">
-    <!-- Componente oficial del header se insertará aquí -->
-  </div>
-
+     <header>
+        <nav id="nav">
+            <div class="content-logo-links">
+                <div class="box-logo">
+                    <img src="./imagenes/logo.svg" alt="" class="logo-img" id="logo-img">
+                </div>
+                <ul class="box-links">
+                    <li class="box-link">
+                        <a href="index.html">Inicio</a>
+                    </li>
+                    <li class="box-link">
+                        <a href="#">Productos</a>
+                    </li>
+                    <li class="box-link">
+                        <a href="#">Contactame</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="search">
+                <div class="content-search">
+                    <div class="box-img-search">
+                        <img src="./imagenes/Lupa.png" alt="" class="img-search">
+                    </div>
+                    <input type="text" id="search-text" placeholder="Buscar" >
+                    <div class="medio"></div>
+                </div>
+                <div class="box-img-carrito" id="box-img-carrito">
+                    <img src="./imagenes/Carrito.png" alt="" class="img-carrito">
+                </div>
+            </div>
+        </nav>
+    </header>
 
   <!-- 
   <header class="encabezado">
@@ -74,9 +103,58 @@
   </main>
 
   
-  <div id="official-footer-placeholder">
-    <!-- Componente oficial del footer se insertará aquí -->
-  </div>
+ <footer>
+        <div class="footerContainer">
+            <div class="sec Aboutus">
+                <h2>Conocenos</h2>
+                    <p>Hermanos Jota es el redescubrimiento de un arte olvidado: crear muebles que no solo sirven una función, sino que alimentan el alma. Existimos en la intersección entre herencia e innovación, donde la calidez del optimismo de los años 60 se encuentra con la conciencia de la sustentabilidad del 2025. Cada pieza cuenta una historia de artesanía que honra el pasado mientras abraza el futuro.</p>
+                    <div class="sci">
+                        <li>
+                            <a href="https://www.instagram.com/hermanosjota_ba" target="_blank">
+                            <img src="imagenes/insta.png" alt="Instagram">
+                            <span>@hermanosjota_ba</span>
+                            </a>
+                        </li>
+                    </div>
+            </div>
+            <div class="sec quicklinks">
+                <h2>Hermanos Jota | Casa Taller</h2>
+                <ul>
+                    <li><a href="">Av. San Juan 2847</a></li>
+                    <li><a href="">C1232AAB — Barrio de San Cristóbal</a></li>
+                    <li><a href="">Ciudad Autónoma de Buenos Aires, Argentina</a></li>
+                </ul>
+            </div>
+            <div class="sec quicklinks">
+                <h2>Horarios</h2>
+                <ul>
+                    <li><a href="#">Lunes a Viernes: 10:00 - 19:00</a></li>
+                    <li><a href="#">Sábados: 10:00 - 14:00</a></li>
+                </ul>
+            </div>
+            <div class="sec contact">
+                <h2>Contacto</h2>
+                <ul class="info">
+                    <li>
+                        <span><img src="imagenes/wsp.png" alt="Whatsapp"></span>
+                        <p><a href="telefono">+54 11 4567-8900</a></p>
+                    </li>
+                    <li>
+                        <span><img src="imagenes/email.png" alt="Email"></span>
+                        <p><a href="gmail">info@hermanosjota.com.ar | Email general</a></p>
+                    </li>
+                    <li>
+                        <span><img src="imagenes/email.png" alt="Email"></span>
+                        <p><a href="gmail">ventas@hermanosjota.com.ar | Ventas </a></p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    
+    <div class="copyriht">
+        <p><strong>© 2025 Hermanos Jota</strong>. Todos los derechos reservados. Este manual es propiedad de Hermanos Jota Muebles.</p>
+    </div>
 
 
   <!-- 
@@ -91,6 +169,7 @@
 
   <!-- Scripts -->
   <script src="js/productos.js"></script>
+   <script src="js/header.js"></script>
   
 </body>
 </html>
