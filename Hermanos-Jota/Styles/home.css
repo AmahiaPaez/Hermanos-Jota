@@ -1,0 +1,121 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+img{
+    width: 100%;
+    position: relative;
+    z-index: 100;
+    transform: translateX();
+}
+main{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 3rem;
+    margin-bottom: 8rem;
+}
+.conteiner-principal-products{
+    width: 95%;
+    display: flex;
+    margin-top: 2rem;
+    min-width: 200px;
+    flex-direction: column;
+}
+.title-principal-products{
+    color: #87A96B;
+    margin-bottom: 1.5rem;
+    font-size: clamp(20px, 5vw, 28px);
+}
+.conteiner-principal{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    position: relative;
+
+}
+.box-principal{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 25%;
+    min-width: 250px;
+    max-width: 350px;
+    background-color: #fff;
+    border: solid 1.5px #d1d1d1;
+    border-radius: 16px;
+}
+
+.conteiner-text-img-principal{
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 50;
+    opacity: 0;
+}
+.box-title-principal{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    width: 90%;
+    margin-bottom: 1.5rem;
+}
+.box-text-principal{
+    width: 85%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5px;
+}
+.title-principal{
+    font-size: clamp(15px, 3.5vw, 28px);
+    color: #C47A6D;
+    font-weight: bold  ;
+}
+.box-text-principal > p{
+    color: #87A96B;
+    text-align: end;
+    font-weight: medium;
+    font-size: clamp(5px, 3vw, 15px);
+}
+
+.conteiner-carrucel{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+.conteiner-img-rows{
+    width: 100%;
+    max-width: 50px;
+    min-width: 25px;
+    cursor: pointer;
+}
+.row-izq{
+    transform: scale(-1);
+}
+.conteiner-carrusel{
+    display: flex;
+    width: 82%;
+    overflow: hidden;
+    min-width: 250px;
+    gap: clamp(10px, 100px, 4vw);
+}
+.conteiner-carrusel-img{
+    width: 50vw;
+    min-width: 250px;
+    border: 1.5px solid #d1d1d1;
+    border-radius: 16px;
+}
