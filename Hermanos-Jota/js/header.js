@@ -1,27 +1,14 @@
-let logo = document.getElementById('logo-img')
-let nav = document.getElementById('nav')
-let flag = true ,width = window.innerWidth
+const menuBtn = document.getElementById("menuBtn");
+const navLinks = document.getElementById("navLinks");
+const menuBtnIcono = menuBtn.querySelector("i");
 
-window.addEventListener('resize',()=>{
-    width = window.innerWidth
-    nav.style.transform = "translateX(-0vw)";
-    logo.style.transform = "translateX(0vw)"
-
-})
-
-logo.addEventListener('click', ()=>{
-    if(width<700){
-        if(flag){
-            nav.style.transform = "translateX(0vw)";
-            logo.style.transform = "translateX(0vw)"
-        } else{
-            nav.style.transform = "translateX(-100vw)";
-            logo.style.transform = "translateX(0vw)"
-        }
-        console.log(flag);
-        flag =!flag
-    } 
+menuBtn.addEventListener("click", (e) => {
+    navLinks.classList.toggle("open");
+    const EsOpen = navLinks.classList.contains("open");
+    menuBtnIcono.setAttribute("class", EsOpen ? "ri-close-line" : "ri-menu-line")
     
-
-    
+});
+navLinks.addEventListener("click", (e) => {
+    navLinks.classList.remove("open");
+    menuBtnIcono.setAttribute("class", "ri-menu-line");
 })

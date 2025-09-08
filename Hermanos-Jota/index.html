@@ -3,71 +3,221 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hermanos Jota | Mueblería </title>
+    <link rel="stylesheet" href="./Styles/header.css">
     <link rel="stylesheet" href="Styles/footer.css">
-    <link rel="stylesheet" href="Styles/home.css">
-    <title>Document</title>
-    <link rel="stylesheet" href="Styles/header.css">
-</head>
-<body>
-    <header>
-        <nav id="nav">
-            <div class="content-logo-links">
-                <div class="box-logo">
-                    <img src="./imagenes/logo.svg" alt="" class="logo-img" id="logo-img">
-                </div>
-                <ul class="box-links">
-                    <li class="box-link">
-                        <a href="#">Inicio</a>
-                    </li>
-                    <li class="box-link">
-                        <a href="#">Productos</a>
-                    </li>
-                    <li class="box-link">
-                        <a href="contacto.html">Contactame</a>
-                    </li>
-                </ul>
+    <link rel="stylesheet" href="Styles/carrusel.css">
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+    rel="stylesheet"/>
+
+        <nav>
+          <div class="navHeader">
+            <div class="navLogo">
+              <a href="#" class="logo">
+                <img src="imagenes/logo.svg" alt="Hermanos Jota" class="logo-image">
+              </a>
             </div>
-            <div class="search">
-                <div class="content-search">
-                    <div class="box-img-search">
-                        <img src="./imagenes/Lupa.png" alt="" class="img-search">
-                    </div>
-                    <input type="text" id="search-text" placeholder="Buscar" >
-                    <div class="medio"></div>
-                </div>
-                <div class="box-img-carrito" id="box-img-carrito">
-                    <img src="./imagenes/Carrito.png" alt="" class="img-carrito">
-                </div>
+            <div class="navMenuBtn" id="menu-btn">
+              <i class="ri-menu-line"></i>
             </div>
+          </div>
+          <ul class="navLinks" id="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#productos">Productos</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+          </ul>
+          <div class="nav__search" id="nav-search">
+            <input type="text" placeholder="Search" />
+            <span class="search-icon">
+              <img src="imagenes/Lupa.png" alt="Buscar" class="search-image">
+            </span>
+            <div class="cart-icon">
+              <img src="imagenes/Carrito.png" alt="Carrito" class="cart-image">
+              <span class="cart-count">0</span>
+            </div>
+          </div>
         </nav>
+
+    <header class="section__container header__container" id="home">
+      <div class="header__image">
+        <img src="imagenes/Diseño sin título.png" alt="header" />
+      </div>
+      <div class="header__content">
+        <div>
+          <h1>Muebles que cuentan historias</h1>
+          <p>En Hermanos Jota creamos piezas únicas que unen tradición y futuro. Cada mueble nace de manos expertas, materiales nobles y un compromiso real con la sustentabilidad. No es solo diseño: es un legado que vive en tu hogar.</p>
+        </div>
+      </div>
     </header>
 
-    <section class="homeContenedor">
-        <div class="homeL">
-            <h1 class="titleMain">Muebles que cuentan historias</h1>
-            <p class="sub">
-                En Hermanos Jota creamos piezas únicas que unen tradición y futuro. Cada mueble nace de manos expertas, materiales nobles y un compromiso real con la sustentabilidad. No es solo diseño: es un legado que vive en tu hogar.
-            </p>
+
+    <section class="section__container about__container" id="about">
+      <div class="about__header">
+        <div>
+          <h2 class="section__header">Herencia viva, diseño consciente</h2>
+          <p class="section__description">En Hermanos Jota transformamos maderas nobles y recuperadas en muebles atemporales, donde tradición, diseño y sustentabilidad se encuentran para crear piezas que acompañan tu historia y tu hogar.</p>
         </div>
-        <div class="homeR">
-            <img src="imagenes/portada.png" alt="Imagen Biblioteca Recoleta">
+        <button class="about__btn"><a href="#productos">Ver Muebles</a></button>
+      </div>
+      <div class="about__content">
+        <div class="about__image">
+          <img src="imagenes/8 a 11.jpg" alt="about" />
         </div>
+        <div class="aboutGrid">
+          <div class="about__card">
+            <h3>1.</h3>
+            <h4>Artesanía con alma</h4>
+            <p>Cada mueble nace de manos expertas y materiales nobles.</p>
+          </div>
+          <div class="about__card">
+            <h3>2.</h3>
+            <h4>Tradición e innovación</h4>
+            <p>Inspirados en la calidez de los años 60, incorporamos diseño atemporal y funcionalidad moderna.</p>
+          </div>
+          <div class="about__card">
+            <h3>3.</h3>
+            <h4>Compromiso sustentable</h4>
+            <p>Usamos maderas certificadas, recuperadas y acabados naturales, cuidando el planeta y futuras generaciones.</p>
+          </div>
+          <div class="about__card">
+            <h3>4.</h3>
+            <h4>Legado para tu hogar:</h4>
+            <p>Cada pieza envejece con gracia, transformándose en parte de tu historia y ritual diario.</p>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <section class="aboutSection">
-            <div class="aboutL">
-                <h2 class="aboutTitle">Herencia viva, diseño consciente</h2>
-                <p class="aboutText">
-                    Somos Hermanos Jota, un taller que redescubre el arte de hacer muebles con alma. Inspirados en la calidez de los años 60 y guiados por la conciencia sustentable del presente, transformamos maderas certificadas y recuperadas en piezas atemporales. Creemos en la artesanía como puente entre generaciones, donde cada creación se convierte en parte de tu historia.
-                </p>
-            </div>
-            <div class="aboutR">
-                <div class="carousel">
-                    <img src="imagenes/c1.png" alt="Fachada histórica de la Biblioteca Recoleta con estilo arquitectónico clásico" />
-                    <img src="imagenes/c2.png" alt="Sala de estudio moderno dentro de la biblioteca con estudiantes interactuando con libros digitales" />
-                    <img src="imagenes/c3.png" alt="Evento comunitario en el jardín soleado de la Biblioteca Recoleta con familias disfrutando de lecturas y talleres educativos" />
-                </div>
-            </div>
+    <section class="carousel-section">
+  <h2 class="section__header" id="productos">Los mejores productos</h2>
+  
+  <div class="carousel-container">
+    <button class="carousel-arrow prev" onclick="moveCarousel(-1)">
+      <img src="imagenes/row.png" id="anterior" alt="Anterior">
+    </button>
+    <button class="carousel-arrow next" onclick="moveCarousel(1)">
+      <img src="imagenes/row.png" alt="Siguiente">
+    </button>
+
+    
+    <div class="carousel-wrapper">
+      <div class="product__grid" id="productCarousel">
+        <!-- Grupo 1 -->
+        <div class="product__card">
+          <h4>aaaa</h4>
+          <p>$00</p>
+          <img src="imagenes/Escritorio Costa.png" alt="product" />
+           <button class="add-to-cart-btn" onclick="addToCart('producto', 1.00)">Agregar</button>
+        </div>
+        <div class="product__card">
+          <h4>aaaa</h4>
+          <p>$00</p>
+          <img src="imagenes/Sofá Patagonia.png" alt="product" />
+           <button class="add-to-cart-btn" onclick="addToCart('producto', 1.00)">Agregar</button>
+        </div>
+        <div class="product__card">
+          <h4>aaa</h4>
+          <p>$00</p>
+          <img src="imagenes/Butaca Mendoza.png" alt="product" />
+           <button class="add-to-cart-btn" onclick="addToCart('producto', 1.00)">Agregar</button>
+        </div>
+        
+        <!-- Grupo 2 -->
+        <div class="product__card">
+          <h4>aaa</h4>
+          <p>$00</p>
+          <img src="imagenes/Biblioteca Recoleta.png" alt="product" />
+           <button class="add-to-cart-btn" onclick="addToCart('producto', 87.00)">Agregar</button>
+        </div>
+        <div class="product__card">
+          <h4>aaaa</h4>
+          <p>$00</p>
+          <img src="imagenes/Silla de Trabajo Belgrano.png" alt="product" />
+           <button class="add-to-cart-btn" onclick="addToCart('producto', 1.00)">Agregar</button>
+        </div>
+        <div class="product__card">
+          <h4>aaaa</h4>
+          <p>$00</p>
+          <img src="imagenes/Mesa de Noche Aconcagua.png" alt="product" />
+           <button class="add-to-cart-btn" onclick="addToCart('Stackable Chair', 1.00)">Agregar</button>
+        </div>
+        
+        <!-- Grupo 3 -->
+        <div class="product__card">
+          <h4>aaa</h4>
+          <p>$00</p>
+          <img src="imagenes/Mesa Comedor Pampa.png" alt="product" />
+           <button class="add-to-cart-btn" onclick="addToCart('producto', 1.00)">Agregar</button>
+        </div>
+        <div class="product__card">
+          <h4>aaa</h4>
+          <p>$00</p>
+          <img src="imagenes/Sillón Copacabana.png" alt="product" />
+           <button class="add-to-cart-btn" onclick="addToCart('producto', 1.00)">Agregar</button>
+        </div>
+        <div class="product__card">
+          <h4>aaaa</h4>
+          <p>$00</p>
+          <img src="imagenes/Mesa de Centro Araucaria.png" alt="product" />
+           <button class="add-to-cart-btn" onclick="addToCart('producto', 1.00)">Agregar</button>
+        </div>
+      </div>
+    </div>
+    
+    <div class="carousel-indicators">
+      <div class="indicator active" onclick="goToSlide(0)"></div>
+      <div class="indicator" onclick="goToSlide(1)"></div>
+      <div class="indicator" onclick="goToSlide(2)"></div>
+    </div>
+  </>
+</section>
+
+    <section class="section__container product__container" id="product">
+      <h2 class="section__header"id="productos" >Mesas</h2>
+      <div class="product__grid">
+        <div class="product__card">
+          <h4>aaaa</h4>
+          <p>$00</p>
+          <img src="imagenes/Mesa Comedor Pampa.png" alt="product" />
+           <button class="add-to-cart-btn" onclick="addToCart('producto', 1.00)">Agregar</button>
+        </div>
+        <div class="product__card">
+          <h4>aaaa</h4>
+          <p>$00</p>
+          <img src="imagenes/Mesa de Centro Araucaria.png" alt="product" />
+           <button class="add-to-cart-btn" onclick="addToCart('producto', 1.00)">Agregar</button>
+        </div>
+        <div class="product__card">
+          <h4>aaaa/h4>
+          <p>$00</p>
+          <img src="imagenes/Mesa de Noche Aconcagua.png" alt="product" />
+           <button class="add-to-cart-btn" onclick="addToCart('producto', 1.00)">Agregar</button>
+        </div>
+      </div>
+      <h2 class="section__header" id="productos" > Sillas y Sillones</h2>
+
+      <div class="product__grid">
+        <div class="product__card">
+          <h4>aaaa</h4>
+          <p>$00</p>
+          <img src="imagenes/Silla de Trabajo Belgrano.png" alt="product" />
+           <button class="add-to-cart-btn" onclick="addToCart('producto', 1.00)">Agregar</button>
+        </div>
+        <div class="product__card">
+          <h4>aaa</h4>
+          <p>$00</p>
+          <img src="imagenes/Sillas Córdoba.png" alt="product" />
+           <button class="add-to-cart-btn" onclick="addToCart('producto', 1.00)">Agregar</button>
+        </div>
+        <div class="product__card">
+          <h4>aaaa</h4>
+          <p>$00</p>
+          <img src="imagenes/Sillón Copacabana.png" alt="product" />
+           <button class="add-to-cart-btn" onclick="addToCart('producto', 1.00)">Agregar</button>
+        </div>
+    
+      </div>
     </section>
 
     <footer>
@@ -117,11 +267,11 @@
                 </ul>
             </div>
         </div>
+       <div class="copyright">© 2025 Hermanos Jota. Todos los derechos reservados. Este manual es propiedad de Hermanos Jota Muebles.</div> 
     </footer>
-    
-    <div class="copyriht">
-        <p><strong>© 2025 Hermanos Jota</strong>. Todos los derechos reservados. Este manual es propiedad de Hermanos Jota Muebles.</p>
-    </div>
-    <script src="js/header.js"></script>
+
+    <script src="main.js"></script>
+    <script src="js/carrusel2.js"></script>
+
 </body>
 </html>
