@@ -1,41 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contacto</title>
+    <title>Contacto - Hermanos Jota</title>
+    <link rel="stylesheet" href="Styles/header_new.css">
     <link rel="stylesheet" href="Styles/contacto.css">
-    <link rel="stylesheet" href="Styles/header.css">
     <link rel="stylesheet" href="Styles/footer.css">
 </head>
 <body>
-     <header>
+    <header>
         <nav>
-          <div class="navHeader">
-            <div class="navLogo">
-              <a href="#" class="logo">
-                <img src="imagenes/logo.svg" alt="Hermanos Jota" class="logo-image">
-              </a>
+            <!-- Logo -->
+            <div class="logo">
+                <a href="index.html">
+                    <img src="imagenes/logo.svg" alt="Hermanos Jota">
+                </a>
             </div>
-            <div class="navMenuBtn" id="menu-btn">
-              <i class="ri-menu-line"></i>
+            
+            <!-- Menú Hamburguesa -->
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
-          </div>
-          <ul class="navLinks" id="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#productos">Productos</a></li>
-            <li><a href="contacto.html">Contacto</a></li>
-          </ul>
-          <div class="nav__search" id="nav-search">
-            <input type="text" placeholder="Search" />
-            <span class="search-icon">
-              <img src="imagenes/Lupa.png" alt="Buscar" class="search-image">
-            </span>
-            <div class="cart-icon">
-              <img src="imagenes/Carrito.png" alt="Carrito" class="cart-image">
-              <span class="cart-count">0</span>
+            
+            <!-- Enlaces de navegación -->
+            <ul class="nav-links">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="producto.html">Productos</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+            
+            <!-- Búsqueda y Carrito -->
+            <div class="nav-search">
+                <div class="search-container">
+                    <span class="search-icon">
+                        <img src="imagenes/Lupa.png" alt="Buscar">
+                    </span>
+                    <input type="text" placeholder="Buscar productos...">
+                </div>
+                <div class="divider"></div>
+                <div class="cart-icon">
+                    <img src="imagenes/Carrito.png" alt="Carrito">
+                    <span class="cart-count">0</span>
+                </div>
             </div>
-          </div>
         </nav>
     </header>
 
@@ -111,10 +121,7 @@
        <div class="copyright">© 2025 Hermanos Jota. Todos los derechos reservados. Este manual es propiedad de Hermanos Jota Muebles.</div> 
     </footer>
     
-    <div class="copyriht">
-        <p><strong>© 2025 Hermanos Jota</strong>. Todos los derechos reservados. Este manual es propiedad de Hermanos Jota Muebles.</p>
-    </div>
-   <script src="js/contacto.js"></script>
-   <script src="js/header.js"></script>
+    <script src="js/header_new.js"></script>
+    <script src="js/contacto.js"></script>
 </body>
 </html>

@@ -1,68 +1,75 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/Styles/footer.css">
-    <title>Document</title>
-    <link rel="stylesheet" href="./Styles/header.css">
+    <title>Hermanos Jota - Muebles Artesanales</title>
+    <link rel="stylesheet" href="Styles/header_new.css">
+    <link rel="stylesheet" href="Styles/hero.css">
     <link rel="stylesheet" href="Styles/footer.css">
-
+    <link rel="stylesheet" href="Styles/carrusel.css">
 </head>
 <body>
     <header>
-        <nav id="nav">
-            <div class="content-logo-links">
-                <div class="box-logo">
-                    <img src="./imagenes/logo.svg" alt="" class="logo-img" id="logo-img">
+        <nav>
+            <!-- Logo -->
+            <div class="logo">
+                <a href="index.html">
+                    <img src="imagenes/logo.svg" alt="Hermanos Jota">
+                </a>
+            </div>
+            
+            <!-- Menú Hamburguesa -->
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            
+            <!-- Enlaces de navegación -->
+            <ul class="nav-links">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="producto.html">Productos</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+            
+            <!-- Búsqueda y Carrito -->
+            <div class="nav-search">
+                <div class="search-container">
+                    <span class="search-icon">
+                        <img src="imagenes/Lupa.png" alt="Buscar">
+                    </span>
+                    <input type="text" placeholder="Buscar productos...">
                 </div>
-                <ul class="box-links">
-                    <li class="box-link">
-                        <a href="#">Inicio</a>
-                    </li>
-                    <li class="box-link">
-                        <a href="#">Productos</a>
-                    </li>
-                    <li class="box-link">
-                        <a href="#">Contactame</a>
-                    </li>
-                </ul>
+                <div class="divider"></div>
+                <div class="cart-icon">
+                    <img src="imagenes/Carrito.png" alt="Carrito">
+                    <span class="cart-count">0</span>
+                </div>
             </div>
-          </div>
-          <ul class="navLinks" id="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#productos">Productos</a></li>
-            <li><a href="contacto.html">Contacto</a></li>
-          </ul>
-          <div class="nav__search" id="nav-search">
-            <input type="text" placeholder="Search" />
-            <span class="search-icon">
-              <img src="imagenes/Lupa.png" alt="Buscar" class="search-image">
-            </span>
-            <div class="cart-icon">
-              <img src="imagenes/Carrito.png" alt="Carrito" class="cart-image">
-              <span class="cart-count">0</span>
-            </div>
-          </div>
         </nav>
 
-    <header class="section__container header__container" id="home">
-      <div class="header__image">
-        <img src="imagenes/Diseño sin título.png" alt="header" />
-      </div>
-      <div class="header__content">
-        <div>
-          <h1>Muebles que cuentan historias</h1>
-          <p>En Hermanos Jota creamos piezas únicas que unen tradición y futuro. Cada mueble nace de manos expertas, materiales nobles y un compromiso real con la sustentabilidad. No es solo diseño: es un legado que vive en tu hogar.</p>
-        </div>
-      </div>
     </header>
+    
+    <!-- Sección Hero -->
+    <section class="hero" id="home">
+        <div class="hero-container">
+            <div class="hero-image">
+                <img src="imagenes/Diseño sin título.png" alt="Muebles Hermanos Jota">
+            </div>
+            <div class="hero-content">
+                <h1>Muebles que cuentan historias</h1>
+                <p>En Hermanos Jota creamos piezas únicas que unen tradición y futuro. Cada mueble nace de manos expertas, materiales nobles y un compromiso real con la sustentabilidad. No es solo diseño: es un legado que vive en tu hogar.</p>
+                <a href="producto.html" class="cta-button">Ver Productos</a>
+            </div>
+        </div>
+    </section>
     <main>
         <div class="conteiner-principal-products">
             <h2 class="title-principal-products">Featured products</h2>
             <div class="conteiner-principal">
                 <div class="box-principal">
-                    <img src="./imagenes/Biblioteca Recoleta.png" alt="">
+                    <img src="./imagenes/Biblioteca-Recoleta.png" alt="">
                     
                     <div class="conteiner-text-img-principal">
                         <div class="box-title-principal">
@@ -79,7 +86,7 @@
                 </div>
                 <div class="box-principal">
                     <div class="conteiner-img-principal">
-                        <img src="./imagenes/Biblioteca Recoleta.png" alt="">
+                        <img src="./imagenes/Biblioteca-Recoleta.png" alt="">
                     </div>
                     <div class="conteiner-text-img-principal">
                         <div class="box-title-principal">
@@ -96,7 +103,7 @@
                 </div>
                 <div class="box-principal">
                     <div class="conteiner-img-principal">
-                        <img src="./imagenes/Biblioteca Recoleta.png" alt="">
+                        <img src="./imagenes/Biblioteca-Recoleta.png" alt="">
                     </div>
                     <div class="conteiner-text-img-principal">
                         <div class="box-title-principal">
@@ -262,8 +269,8 @@
        <div class="copyright">© 2025 Hermanos Jota. Todos los derechos reservados. Este manual es propiedad de Hermanos Jota Muebles.</div> 
     </footer>
 
-    <script src="main.js"></script>
-    <script src="js/carrusel2.js"></script>
+    <script src="js/header_new.js"></script>
+    <script src="js/carrucel.js"></script>
 
 </body>
 </html>
