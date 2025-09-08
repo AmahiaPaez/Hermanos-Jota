@@ -5,10 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/Styles/footer.css">
     <title>Document</title>
-    <link rel="stylesheet" href="Styles/header.css">
-    <link rel="stylesheet" href="/Hermanos-Jota/Styles/productos.css">
     <link rel="stylesheet" href="./Styles/header.css">
-    <link rel="stylesheet" href="./Styles/home.css">
     <link rel="stylesheet" href="Styles/footer.css">
 
 </head>
@@ -24,33 +21,48 @@
                         <a href="#">Inicio</a>
                     </li>
                     <li class="box-link">
-                        <a href="producto.html">Productos</a>
+                        <a href="#">Productos</a>
                     </li>
                     <li class="box-link">
-                        <a href="contacto.html">Contactame</a>
+                        <a href="#">Contactame</a>
                     </li>
                 </ul>
             </div>
-            <div class="search">
-                <div class="content-search">
-                    <div class="box-img-search">
-                        <img src="./imagenes/Lupa.png" alt="" class="img-search">
-                    </div>
-                    <input type="text" id="search-text" placeholder="Buscar" >
-                    <div class="medio"></div>
-                </div>
-                <div class="box-img-carrito" id="box-img-carrito">
-                    <img src="./imagenes/Carrito.png" alt="" class="img-carrito">
-                </div>
+          </div>
+          <ul class="navLinks" id="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#productos">Productos</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+          </ul>
+          <div class="nav__search" id="nav-search">
+            <input type="text" placeholder="Search" />
+            <span class="search-icon">
+              <img src="imagenes/Lupa.png" alt="Buscar" class="search-image">
+            </span>
+            <div class="cart-icon">
+              <img src="imagenes/Carrito.png" alt="Carrito" class="cart-image">
+              <span class="cart-count">0</span>
             </div>
+          </div>
         </nav>
+
+    <header class="section__container header__container" id="home">
+      <div class="header__image">
+        <img src="imagenes/Diseño sin título.png" alt="header" />
+      </div>
+      <div class="header__content">
+        <div>
+          <h1>Muebles que cuentan historias</h1>
+          <p>En Hermanos Jota creamos piezas únicas que unen tradición y futuro. Cada mueble nace de manos expertas, materiales nobles y un compromiso real con la sustentabilidad. No es solo diseño: es un legado que vive en tu hogar.</p>
+        </div>
+      </div>
     </header>
     <main>
         <div class="conteiner-principal-products">
             <h2 class="title-principal-products">Featured products</h2>
             <div class="conteiner-principal">
                 <div class="box-principal">
-                    <img src="./imagenes/Biblioteca-Recoleta.png" alt="">
+                    <img src="./imagenes/Biblioteca Recoleta.png" alt="">
                     
                     <div class="conteiner-text-img-principal">
                         <div class="box-title-principal">
@@ -67,7 +79,7 @@
                 </div>
                 <div class="box-principal">
                     <div class="conteiner-img-principal">
-                        <img src="./imagenes/Biblioteca-Recoleta.png" alt="">
+                        <img src="./imagenes/Biblioteca Recoleta.png" alt="">
                     </div>
                     <div class="conteiner-text-img-principal">
                         <div class="box-title-principal">
@@ -84,7 +96,7 @@
                 </div>
                 <div class="box-principal">
                     <div class="conteiner-img-principal">
-                        <img src="./imagenes/Biblioteca-Recoleta.png" alt="">
+                        <img src="./imagenes/Biblioteca Recoleta.png" alt="">
                     </div>
                     <div class="conteiner-text-img-principal">
                         <div class="box-title-principal">
@@ -196,9 +208,10 @@
                 </div>
             </div>
         </div>
-    </main>
     
-    
+      </div>
+    </section>
+
     <footer>
         <div class="footerContainer">
             <div class="sec Aboutus">
@@ -246,8 +259,11 @@
                 </ul>
             </div>
         </div>
+       <div class="copyright">© 2025 Hermanos Jota. Todos los derechos reservados. Este manual es propiedad de Hermanos Jota Muebles.</div> 
     </footer>
-    <script src="./js/carrucel.js"></script>
-    <script src="./js/header.js"></script>
+
+    <script src="main.js"></script>
+    <script src="js/carrusel2.js"></script>
+
 </body>
 </html>

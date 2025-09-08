@@ -101,7 +101,7 @@ footer .footerContainer .contact .info li a {
     color:var(--fifth-color);
     text-decoration: none;
 }
-.copyriht {
+.copyright {
     width: 100%;
     background-color: var(--tertiary-color);
     padding: 20px 100px 30px;

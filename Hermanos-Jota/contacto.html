@@ -10,35 +10,32 @@
 </head>
 <body>
      <header>
-        <nav id="nav">
-            <div class="content-logo-links">
-                <div class="box-logo">
-                    <img src="./imagenes/logo.svg" alt="" class="logo-img" id="logo-img">
-                </div>
-                <ul class="box-links">
-                    <li class="box-link">
-                        <a href="index.html">Inicio</a>
-                    </li>
-                    <li class="box-link">
-                        <a href="producto.html">Productos</a>
-                    </li>
-                    <li class="box-link">
-                        <a href="#">Contactame</a>
-                    </li>
-                </ul>
+        <nav>
+          <div class="navHeader">
+            <div class="navLogo">
+              <a href="#" class="logo">
+                <img src="imagenes/logo.svg" alt="Hermanos Jota" class="logo-image">
+              </a>
             </div>
-            <div class="search">
-                <div class="content-search">
-                    <div class="box-img-search">
-                        <img src="./imagenes/Lupa.png" alt="" class="img-search">
-                    </div>
-                    <input type="text" id="search-text" placeholder="Buscar" >
-                    <div class="medio"></div>
-                </div>
-                <div class="box-img-carrito" id="box-img-carrito">
-                    <img src="./imagenes/Carrito.png" alt="" class="img-carrito">
-                </div>
+            <div class="navMenuBtn" id="menu-btn">
+              <i class="ri-menu-line"></i>
             </div>
+          </div>
+          <ul class="navLinks" id="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#productos">Productos</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+          </ul>
+          <div class="nav__search" id="nav-search">
+            <input type="text" placeholder="Search" />
+            <span class="search-icon">
+              <img src="imagenes/Lupa.png" alt="Buscar" class="search-image">
+            </span>
+            <div class="cart-icon">
+              <img src="imagenes/Carrito.png" alt="Carrito" class="cart-image">
+              <span class="cart-count">0</span>
+            </div>
+          </div>
         </nav>
     </header>
 
@@ -64,7 +61,7 @@
   <div id="estado"></div>
   
 </form>
-<footer>
+    <footer>
         <div class="footerContainer">
             <div class="sec Aboutus">
                 <h2>Conocenos</h2>
@@ -111,6 +108,7 @@
                 </ul>
             </div>
         </div>
+       <div class="copyright">© 2025 Hermanos Jota. Todos los derechos reservados. Este manual es propiedad de Hermanos Jota Muebles.</div> 
     </footer>
     
     <div class="copyriht">

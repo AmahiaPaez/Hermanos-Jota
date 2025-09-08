@@ -1,7 +1,7 @@
 async function cargarProductos() {
-  const response = await fetch("info_product.json");
+  const response = await fetch("info_Producto.json");
   const data = await response.json();
-  return new Promise(resolve => setTimeout(() => resolve(data.catalogo.productos), 600));
+  return new Promise(resolve => setTimeout(() => resolve(data.catalogo.Productos), 600));
 }
 
 function obtenerParametro(nombre) {
@@ -18,8 +18,8 @@ function slugify(text) {
     .replace(/\s+/g, "-");
 }
 
-function renderizarDetalle(producto) {
-  const contenedor = document.getElementById("detalle-producto");
+function renderizarDetalle(Producto) {
+  const contenedor = document.getElementById("detalle-Producto");
   if (!contenedor) return;
 
   const humanLabel = key => {
@@ -75,28 +75,28 @@ function renderizarDetalle(producto) {
 
   const specs = [];
   prioridad.forEach(k => {
-    if (producto[k] !== undefined && producto[k] !== null && String(producto[k]).trim() !== "") {
-      specs.push({ key: k, value: producto[k] });
+    if (Producto[k] !== undefined && Producto[k] !== null && String(Producto[k]).trim() !== "") {
+      specs.push({ key: k, value: Producto[k] });
     }
   });
-  Object.keys(producto).forEach(k => {
+  Object.keys(Producto).forEach(k => {
     if (ignoreKeys.has(k)) return;
     if (prioridad.includes(k)) return;
-    const val = producto[k];
+    const val = Producto[k];
     if (val === undefined || val === null) return;
     const s = String(val).trim();
     if (s === "") return;
     specs.push({ key: k, value: s });
   });
 
-  const imagenSrc = producto.imagen
-    ? `${producto.imagen}`
-    : (producto.nombre ? `imagenes/${slugify(producto.nombre)}.png` : "imagenes/placeholder.png");
+  const imagenSrc = Producto.imagen
+    ? `${Producto.imagen}`
+    : (Producto.nombre ? `imagenes/${slugify(Producto.nombre)}.png` : "imagenes/placeholder.png");
 
   contenedor.innerHTML = `
-    <div class="imagen-producto">
+    <div class="imagen-Producto">
       <div class="img-card">
-        <img src="${imagenSrc}" alt="${producto.nombre || ''}" class="img-silla" onerror="this.src='imagenes/placeholder.png'">
+        <img src="${imagenSrc}" alt="${Producto.nombre || ''}" class="img-silla" onerror="this.src='imagenes/placeholder.png'">
         <div class="selector-cantidad centrado" id="selector-externo">
           <button class="boton-cant" id="menos" aria-label="Restar">−</button>
           <span class="numero-cant" id="cantidad">1</span>
@@ -105,10 +105,10 @@ function renderizarDetalle(producto) {
       </div>
     </div>
 
-    <div class="info-producto">
+    <div class="info-Producto">
       <div class="info-top">
-        <h1 class="titulo-producto">${producto.nombre || ''}</h1>
-        <p class="descripcion-producto">${producto.descripcion || ''}</p>
+        <h1 class="titulo-Producto">${Producto.nombre || ''}</h1>
+        <p class="descripcion-Producto">${Producto.descripcion || ''}</p>
 
         <div class="cuadricula-especificaciones" id="especificaciones">
         </div>
@@ -124,7 +124,7 @@ function renderizarDetalle(producto) {
   if (!contSpecs) return;
 
   if (specs.length === 0) {
-    contSpecs.innerHTML = `<p style="color:#7a8b7a; font-size:14px;">No hay especificaciones adicionales para este producto.</p>`;
+    contSpecs.innerHTML = `<p style="color:#7a8b7a; font-size:14px;">No hay especificaciones adicionales para este Producto.</p>`;
   } else {
     contSpecs.innerHTML = specs.map(s => {
       const valor = String(s.value).replace(/\n/g, "<br>");
@@ -156,27 +156,27 @@ function renderizarDetalle(producto) {
   if (btnCarrito) {
     btnCarrito.addEventListener("click", () => {
       let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
-      carrito.push({ ...producto, cantidad });
+      carrito.push({ ...Producto, cantidad });
       localStorage.setItem("carrito", JSON.stringify(carrito));
-      alert(`${cantidad} ${producto.nombre || 'producto'} añadido(s) al carrito`);
+      alert(`${cantidad} ${Producto.nombre || 'Producto'} añadido(s) al carrito`);
       if (typeof actualizarContadorCarrito === "function") actualizarContadorCarrito();
     });
   }
 }
 
-function renderizarCarrusel(productos, id) {
+function renderizarCarrusel(Productos, id) {
   const carrusel = document.getElementById(id);
   if (!carrusel) return;
   carrusel.innerHTML = "";
 
-  productos.forEach(prod => {
+  Productos.forEach(prod => {
     const card = document.createElement("div");
-    card.classList.add("tarjeta-producto");
+    card.classList.add("tarjeta-Producto");
 
     const imgSrc = prod.imagen ? prod.imagen : `imagenes/${slugify(prod.nombre)}.png`;
 
     card.innerHTML = `
-      <a class="card-link" href="producto.html?id=${encodeURIComponent(prod.nombre)}">
+      <a class="card-link" href="Producto.html?id=${encodeURIComponent(prod.nombre)}">
         <div class="thumb">
           <img src="${imgSrc}" alt="${prod.nombre}" onerror="this.src='imagenes/placeholder.png'">
         </div>
@@ -198,7 +198,7 @@ function activarCarrusel() {
       const gap = parseInt(style.marginRight || 20, 10) || 20;
       const cardWidth = primeraTarjeta.getBoundingClientRect().width + gap;
       target.scrollBy({
-        left: btn.classList.contains("next") ? cardWidth : -cardWidth,
+        left: btn.classList.contains("sig") ? cardWidth : -cardWidth,
         behavior: "smooth"
       });
     });
@@ -227,14 +227,14 @@ function formatPrice(valor) {
 }
 
 document.addEventListener("DOMContentLoaded", async () => {
-  const productos = await cargarProductos();
+  const Productos = await cargarProductos();
   const id = obtenerParametro("id");
-  const producto = productos.find(p => p.nombre === id) || productos[0];
+  const Producto = Productos.find(p => p.nombre === id) || Productos[0];
 
-  renderizarDetalle(producto);
+  renderizarDetalle(Producto);
 
-  renderizarCarrusel(productos.slice(0, 4), "carrusel1");
-  renderizarCarrusel(productos.slice(4, 8), "carrusel2");
+  renderizarCarrusel(Productos.slice(0, 4), "carrusel1");
+  renderizarCarrusel(Productos.slice(4, 8), "carrusel2");
   activarCarrusel();
 
   actualizarContadorCarrito();
