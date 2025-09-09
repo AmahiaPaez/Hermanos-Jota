@@ -1,14 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Hermanos Jota - Catálogo</title>
   <link rel="stylesheet" href="Styles/main.css">
+  <style>
+    /* Small extra styles to improve interactivity for featured + carousels */
+    .featured-wrap { display:flex; gap:1rem; align-items:center; margin-bottom:2rem; }
+    .featured-card { flex:1; background:white; padding:1rem; border-radius:12px; box-shadow:0 8px 20px rgba(0,0,0,0.08); text-align:center; transition:transform .35s, box-shadow .35s, opacity .4s; cursor:pointer; }
+    .featured-card img{ width:100%; height:160px; object-fit:cover; border-radius:10px; }
+    .featured-card:hover{ transform:translateY(-6px); box-shadow:0 18px 35px rgba(0,0,0,0.12); }
+    .fade-in { animation: fadeIn .45s ease both; }
+    @keyframes fadeIn{ from{opacity:0; transform:translateY(6px);} to{opacity:1; transform:none;} }
 
-  <title>Document</title>
+    /* Compact carousel controls */
+    .carousel-row { position:relative; margin-bottom:2rem; }
+    .carousel-track { display:flex; gap:1rem; overflow:hidden; scroll-behavior:smooth; }
+    .carousel-item { min-width:260px; max-width:260px; flex:0 0 260px; background:white; padding:1rem; border-radius:12px; box-shadow:0 8px 20px rgba(0,0,0,0.06); cursor:pointer; }
+    .carousel-item img{ width:100%; height:140px; object-fit:cover; border-radius:8px; margin-bottom:.6rem; }
+    .carousel-btn { position:absolute; top:50%; transform:translateY(-50%); background:rgba(0,0,0,0.06); border:none; width:40px; height:40px; border-radius:8px; cursor:pointer; }
+    .carousel-btn.left{ left:-10px; }
+    .carousel-btn.right{ right:-10px; }
+
+    /* Search preview card */
+    .search-preview { display:flex; gap:.6rem; align-items:center; padding:.6rem; }
+    .search-preview img{ width:64px; height:52px; object-fit:cover; border-radius:6px; }
+    .search-preview .meta{ font-size:.95rem; }
+    .search-preview .meta .name{ font-weight:600; color:#333; }
+    .search-preview .meta .price{ color:#c17852; font-weight:700; }
+
+    /* Small responsiveness */
+    @media (max-width:800px){ .featured-card img{ height:120px } .carousel-item{ min-width:200px; max-width:200px } }
+  </style>
 </head>
 <body>
-
   <header>
     <div class="header">
         <div class="logo">
@@ -18,14 +44,14 @@
         </div>
         
         <nav class="nav">
-            <a href="home.html" onclick="mostrarHome()">Home</a>
-            <a href="#" onclick="mostrarProductos()">Productos</a>
+            <a href="home.html">Home</a>
+            <a href="#">Productos</a>
             <a href="contacto.html">Contacto</a>
         </nav>
         
         <div class="headerR">
             <div class="buscarContainer">
-                <input type="text" class="buscarBox" placeholder="Buscar" oninput="bucadorProduct(this.value)">
+                <input id="searchBox" type="text" class="buscarBox" placeholder="Buscar" oninput="bucadorProduct(this.value)">
                 <div class="buscarResultado" id="buscarResult"></div>
             </div>
             <div class="cartImagen" onclick="toggleCart()">
@@ -35,67 +61,49 @@
         </div>
     </div>
   </header>
-  
 
-    <div class="mainContainer" id="mainConten">
-        <!-- Home Section -->
-        <div id="seccHome">
-            <h2 class="">Mejores Producctos</h2>
-            
-            <!-- Carousel -->
-            <div class="carruselContainer">
-                <div class="carrusel" id="carrusel">
-                    <!-- Carousel slides will be populated by JavaScript -->
-                </div>
-                <div class="carruselNav" id="carruselN">
-                    <!-- Dots will be populated by JavaScript -->
-                </div>
-            </div>
+  <main class="mainContainer" id="mainConten">
+    <section id="seccHome">
+      <h2 class="secTitulo">Mejores Productos</h2>
 
-            <h2 class="secTitulo">opcion 1 aca</h2>
-            <div class="productoGrid" id="mejoresProds">
-                <!-- Products will be populated by JavaScript -->
-            </div>
+      <!-- Featured 3 that change randomly -->
+      <div id="featuredWrap" class="featured-wrap" aria-live="polite"></div>
 
-            <h2 class="secTitulo">opcion 2 aca</h2>
-            <div class="productoGrid" id="segCateg">
-                <!-- Products will be populated by JavaScript -->
-            </div>
+      <!-- Two carousels -->
+      <h2 class="secTitulo">Colección Destacada</h2>
+      <div class="carousel-row">
+        <button class="carousel-btn left" id="carousel1Prev">◀</button>
+        <div class="carousel-track" id="carousel1"></div>
+        <button class="carousel-btn right" id="carousel1Next">▶</button>
+      </div>
 
-            <h2 class="secTitulo">opcion 3 aca</h2>
-            <div class="productoGrid" id="tercCateg">
-                <!-- Products will be populated by JavaScript -->
-            </div>
-        </div>
+      <h2 class="secTitulo">Nuevas Llegadas</h2>
+      <div class="carousel-row">
+        <button class="carousel-btn left" id="carousel2Prev">◀</button>
+        <div class="carousel-track" id="carousel2"></div>
+        <button class="carousel-btn right" id="carousel2Next">▶</button>
+      </div>
 
-
-        <div id="productsSection" style="display: none;">
-            <h2 class="secTitulo">llllllllllllllllllllllllllllllllllllllllll</h2>
-            <div class="productoGrid" id="todosProdcts">
-            </div>
-        </div>
-    </div>
+      <h2 class="secTitulo">Todos los Productos</h2>
+      <div class="productoGrid" id="todosProdcts"></div>
+    </section>
 
     <!-- Product Detail Modal -->
-    <div class="modal" id="productModal">
-        <div class="modal-content">
-            <span class="modal-close" onclick="cerrarModal()">&times;</span>
-            <div class="product-detail" id="productDetalle">
-                <!-- Product detail will be populated by JavaScript -->
-            </div>
-        </div>
+    <div class="modal" id="productModal" aria-modal="true" role="dialog">
+      <div class="modal-content">
+        <span class="modal-close" id="modalClose">&times;</span>
+        <div class="product-detail" id="productDetalle"></div>
+      </div>
     </div>
 
     <!-- Cart Sidebar -->
     <div class="cartSidebar" id="cartSidebar">
         <div class="carritoHeader">
             <h3 id="carritoTitulo">0 Productos</h3>
-            <span class="cartCerrar" onclick="toggleCart()">&times;</span>
+            <span class="cartCerrar" id="cartClose">&times;</span>
         </div>
         <div class="carritoContent">
-            <div id="cartItems">
-                <!-- Cart items will be populated by JavaScript -->
-            </div>
+            <div id="cartItems"></div>
             <div class="cartTotal">
                 <div class="cartTotal-amount" id="cartTotal">$0</div>
                 <button class="checkoutBtn">Comprar</button>
@@ -103,26 +111,180 @@
         </div>
     </div>
 
-    <section>
-      <h2 class="secTitulo">Mejores productos</h2>
-      <div class="productoGrid"></div>
-    </section>
-    <div class="modal"></div>
+  </main>
 
-   <footer>
-      <div class="footer">
-          <div class="footerImg">
-            <img src="imagenes/insta.png"  height="40" alt="">
-          </div>
-          <div class="footerImg">
-              <img src="imagenes/email.png" height="40" alt="">
-          </div>
-          <div class="footerImg">
-            <img src="imagenes/wsp.png" height="40" alt="">
-          </div>
-      </div>
-    </footer>
+  <footer>
+    <div class="footer">
+      <div class="footerImg"><img src="imagenes/insta.png" height="40"></div>
+      <div class="footerImg"><img src="imagenes/email.png" height="40"></div>
+      <div class="footerImg"><img src="imagenes/wsp.png" height="40"></div>
+    </div>
+  </footer>
 
-    <script src="js/main.js"></script>
+  <script>
+  /* ===== DATA (copiado desde info/product JSON) ===== */
+  const productos = [
+    { nombre: "Aparador Uspallata", categoria: "Aparadores", descripcion: "Aparador de seis puertas...", medidas: "180 × 45 × 75 cm", materiales: "Nogal macizo FSC®", acabado: "Aceite natural ecológico", precio: 89900, imagen: "imagenes/Aparador_Uspallata.png" },
+    { nombre: "Biblioteca Recoleta", categoria: "Bibliotecas", descripcion: "Sistema modular de estantes...", medidas: "100 × 35 × 200 cm", materiales: "Estructura de acero, estantes de roble", acabado: "Laca mate ecológica", precio: 34900, imagen: "imagenes/Biblioteca_Recoleta.png" },
+    { nombre: "Butaca Mendoza", categoria: "Butacas", descripcion: "Butaca tapizada en bouclé...", medidas: "80 × 75 × 85 cm", materiales: "Guatambú macizo, tela bouclé", acabado: "Cera vegetal, tapizado premium", precio: 45900, imagen: "imagenes/Butaca_Mendoza.png" },
+    { nombre: "Sillón Copacabana", categoria: "Sillones", descripcion: "Sillón lounge en cuero...", medidas: "90 × 85 × 95 cm", materiales: "Cuero curtido vegetal, acero pintado", acabado: "Cuero anilina premium", precio: 67500, imagen: "imagenes/Sillon_Copacabana.png" },
+    { nombre: "Mesa de Centro Araucaria", categoria: "Mesas de Centro", descripcion: "Mesa de centro con sobre circular...", medidas: "90 × 90 × 45 cm", materiales: "Sobre de mármol Patagonia, patas de nogal", acabado: "Mármol pulido, aceite natural en madera", precio: 52300, imagen: "imagenes/Mesa_de_Centro_Araucaria.png" },
+    { nombre: "Mesa de Noche Aconcagua", categoria: "Mesas de Noche", descripcion: "Mesa de noche con cajón oculto...", medidas: "45 × 35 × 60 cm", materiales: "Roble macizo FSC®", acabado: "Barniz mate de poliuretano", precio: 18900, imagen: "imagenes/Mesa_de_Noche_Aconcagua.png" },
+    { nombre: "Sofá Patagonia", categoria: "Sofás", descripcion: "Sofá de tres cuerpos tapizado...", medidas: "220 × 90 × 80 cm", materiales: "Madera de eucalipto certificada FSC®", acabado: "Lino 100% natural premium", precio: 89500, imagen: "imagenes/Sofa_Patagonia.png" },
+    { nombre: "Mesa Comedor Pampa", categoria: "Mesas de Comedor", descripcion: "Mesa extensible de roble macizo...", medidas: "160-240 × 90 × 75 cm", materiales: "Roble macizo FSC®", acabado: "Aceite-cera natural", precio: 78900, imagen: "imagenes/Mesa_Comedor_Pampa.png" },
+    { nombre: "Sillas Córdoba", categoria: "Sillas", descripcion: "Set de cuatro sillas apilables...", medidas: "45 × 52 × 80 cm", materiales: "Contrachapado nogal", acabado: "Laca mate", precio: 28900, imagen: "imagenes/Sillas_Cordoba.png" },
+    { nombre: "Escritorio Costa", categoria: "Escritorios", descripcion: "Escritorio compacto con cajón...", medidas: "120 × 60 × 75 cm", materiales: "Bambú laminado", acabado: "Laca mate resistente", precio: 32500, imagen: "imagenes/Escritorio_Costa.png" },
+    { nombre: "Silla de Trabajo Belgrano", categoria: "Sillas de Oficina", descripcion: "Silla ergonómica regulable...", medidas: "60 × 60 × 90-100 cm", materiales: "Malla técnica, tejido reciclado", acabado: "Base cromada", precio: 24900, imagen: "imagenes/Silla_de_Trabajo_Belgrano.png" }
+  ];
+
+  /* ===== App state ===== */
+  let cart = JSON.parse(localStorage.getItem('hj_cart') || '[]');
+  let featuredInterval;
+
+  /* ===== Helpers ===== */
+  const $ = sel => document.querySelector(sel);
+  const $$ = sel => Array.from(document.querySelectorAll(sel));
+
+  function formatPrice(n){ return '$' + n.toLocaleString(); }
+
+  /* ===== Featured 3 (random change every 4s) ===== */
+  function renderFeatured(){
+    const wrap = $('#featuredWrap');
+    const shuffled = [...productos].sort(()=>Math.random()-0.5).slice(0,3);
+    wrap.innerHTML = '';
+    shuffled.forEach(p=>{
+      const div = document.createElement('article');
+      div.className = 'featured-card fade-in';
+      div.tabIndex = 0;
+      div.onclick = ()=> openProduct(p);
+      div.innerHTML = `\n        <img src="${p.imagen}" alt="${p.nombre}">\n        <h3>${p.nombre}</h3>\n        <div style=\"color:#7a9b7e; font-size:.95rem; margin:.3rem 0\">${p.categoria}</div>\n        <div style=\"font-weight:700; color:#c17852\">${formatPrice(p.precio)}</div>\n      `;
+      wrap.appendChild(div);
+    });
+  }
+
+  function startFeatured(){ renderFeatured(); clearInterval(featuredInterval); featuredInterval = setInterval(()=>{ renderFeatured(); }, 4000); }
+
+  /* ===== Carousels (simple scroll) ===== */
+  function buildCarousel(trackId, items){
+    const track = document.getElementById(trackId);
+    track.innerHTML = '';
+    items.forEach(p=>{
+      const el = document.createElement('div'); el.className='carousel-item'; el.onclick = ()=> openProduct(p);
+      el.innerHTML = `\n        <img src="${p.imagen}" alt="${p.nombre}">\n        <div style=\"font-weight:700;\">${p.nombre}</div>\n        <div style=\"color:#7a9b7e\">${p.categoria}</div>\n        <div style=\"font-weight:800; color:#c17852; margin-top:.4rem\">${formatPrice(p.precio)}</div>\n      `;
+      track.appendChild(el);
+    });
+  }
+
+  function wireCarousel(prevBtn, nextBtn, trackId){
+    const prev = document.getElementById(prevBtn); const next = document.getElementById(nextBtn); const track = document.getElementById(trackId);
+    prev.addEventListener('click', ()=>{ track.scrollBy({left:-280, behavior:'smooth'}); });
+    next.addEventListener('click', ()=>{ track.scrollBy({left:280, behavior:'smooth'}); });
+  }
+
+  /* ===== Products grid ===== */
+  function renderAllProducts(){
+    const container = document.getElementById('todosProdcts');
+    container.innerHTML = produtosToCards(productos);
+  }
+
+  function produtosToCards(list){
+    return list.map(p=>`
+      <div class=\"product-card\" onclick=\"openProductByName('${escapeHtml(p.nombre)}')\">\n        <img src=\"${p.imagen}\" alt=\"${escapeHtml(p.nombre)}\">\n        <h3 class=\"product-name\">${escapeHtml(p.nombre)}</h3>\n        <p class=\"product-price\">${formatPrice(p.precio)}</p>\n      </div>
+    `).join('');
+  }
+
+  /* ===== Modal / Product detail ===== */
+  function openProduct(product){
+    const modal = $('#productModal');
+    const box = $('#productDetalle');
+    box.innerHTML = `\n      <div class=\"product-detail-image\" style=\"flex:1\">\n        <img src=\"${product.imagen}\" alt=\"${escapeHtml(product.nombre)}\">\n      </div>\n      <div class=\"product-detail-info\" style=\"flex:1\">\n        <h2 class=\"product-detail-title\">${escapeHtml(product.nombre)}</h2>\n        <p class=\"product-detail-description\">${escapeHtml(product.descripcion)}</p>\n        <div class=\"product-specs\">\n          <div class=\"specs-grid\">\n            <div class=\"spec-item\"><div class=\"spec-title\">Medidas</div><div>${product.medidas||'-'}</div></div>\n            <div class=\"spec-item\"><div class=\"spec-title\">Materiales</div><div>${product.materiales||'-'}</div></div>\n            <div class=\"spec-item\"><div class=\"spec-title\">Acabado</div><div>${product.acabado||'-'}</div></div>\n          </div>\n        </div>\n        <div class=\"quantity-selector\">\n          <button class=\"quantity-btn\" id=\"qMinus\">−</button>\n          <input type=\"number\" class=\"quantity-input\" id=\"quantityInput\" value=\"1\" min=\"1\">\n          <button class=\"quantity-btn\" id=\"qPlus\">+</button>\n        </div>\n        <div style=\"display:flex;align-items:center;justify-content:space-between;gap:1rem\">\n          <div style=\"font-size:1.5rem;font-weight:bold;color:#c17852\">${formatPrice(product.precio)}</div>\n          <button class=\"add-to-cart-btn\" id=\"addCartBtn\">Agregar al Carrito</button>\n        </div>\n      </div>\n    `;
+    // wire quantity + add
+    modal.style.display = 'block';
+    setTimeout(()=>{ $('#quantityInput').value = 1; $('#qMinus').onclick = ()=> changeQuantity(-1); $('#qPlus').onclick = ()=> changeQuantity(1); $('#addCartBtn').onclick = ()=> { addToCart(product); }; }, 60);
+    // close mobile search
+    hideSearchResults();
+  }
+
+  function openProductByName(name){
+    const p = productos.find(x=>x.nombre === name);
+    if(p) openProduct(p);
+  }
+
+  function changeQuantity(delta){ const input = $('#quantityInput'); const v = Math.max(1, parseInt(input.value || '1') + delta); input.value = v; }
+
+  document.getElementById('modalClose')?.addEventListener('click', ()=> $('#productModal').style.display='none');
+  document.getElementById('cartClose')?.addEventListener('click', ()=> toggleCart());
+
+  window.addEventListener('click', (e)=>{
+    if(e.target === document.getElementById('productModal')) document.getElementById('productModal').style.display='none';
+  });
+
+  /* ===== Cart ===== */
+  function updateCartUI(){
+    const cartItems = $('#cartItems'); const cartCount = $('#cartCount'); const cartTitle = $('#carritoTitulo'); const cartTotal = $('#cartTotal');
+    const totalItems = cart.reduce((s,i)=>s+i.quantity,0);
+    const totalPrice = cart.reduce((s,i)=>s + (i.precio * i.quantity),0);
+    cartCount.textContent = totalItems;
+    cartTitle.textContent = `${totalItems} Producto${totalItems!==1 ? 's' : ''}`;
+    cartTotal.textContent = formatPrice(totalPrice);
+    if(cart.length===0){ cartItems.innerHTML = '<div style="text-align:center;padding:2rem;color:#666">Tu carrito está vacío</div>' }
+    else{
+      cartItems.innerHTML = cart.map(item=>`
+        <div class="cart-item">\n          <img src="${item.imagen}" alt="${escapeHtml(item.nombre)}" class="cart-item-image">\n          <div class="cart-item-info">\n            <div class="cart-item-name">${escapeHtml(item.nombre)}</div>\n            <div style="color:#c17852;font-weight:bold">${formatPrice(item.precio)}</div>\n            <div class="cart-item-controls">\n              <button class="cart-quantity-btn" onclick="decreaseCart('${escapeHtml(item.nombre)}')">−</button>\n              <input class="cart-quantity" value="${item.quantity}" onchange="setCartQuantity('${escapeHtml(item.nombre)}', this.value)" />\n              <button class="cart-quantity-btn" onclick="increaseCart('${escapeHtml(item.nombre)}')">+</button>\n              <button class="remove-item" onclick="removeFromCart('${escapeHtml(item.nombre)}')">Eliminar</button>\n            </div>\n          </div>\n        </div>
+      `).join('');
+    }
+    localStorage.setItem('hj_cart', JSON.stringify(cart));
+  }
+
+  function addToCart(product){ const qty = Math.max(1, parseInt($('#quantityInput').value||1)); const existing = cart.find(i=>i.nombre===product.nombre); if(existing) existing.quantity += qty; else cart.push({...product, quantity: qty}); updateCartUI(); $('#productModal').style.display='none'; /* small animation */ const cartBtn = document.querySelector('.cartImagen'); cartBtn.animate([{transform:'scale(1.15)'},{transform:'scale(1)'}],{duration:220}); }
+  function removeFromCart(name){ cart = cart.filter(i=>i.nombre!==name); updateCartUI(); }
+  function decreaseCart(name){ const it = cart.find(i=>i.nombre===name); if(!it) return; it.quantity = Math.max(0, it.quantity-1); if(it.quantity===0) removeFromCart(name); else updateCartUI(); }
+  function increaseCart(name){ const it = cart.find(i=>i.nombre===name); if(!it) return; it.quantity++; updateCartUI(); }
+  function setCartQuantity(name, val){ const n = parseInt(val) || 0; if(n<=0) removeFromCart(name); else{ const it = cart.find(i=>i.nombre===name); if(it){ it.quantity = n; updateCartUI(); } } }
+
+  function toggleCart(){ const s = $('#cartSidebar'); s.classList.toggle('open'); }
+
+  /* ===== Search preview ===== */
+  const searchBox = document.getElementById('searchBox');
+  const buscarResult = document.getElementById('buscarResult');
+  let searchTimeout;
+
+  searchBox.addEventListener('input', (e)=>{
+    clearTimeout(searchTimeout);
+    const q = e.target.value.trim();
+    if(q.length < 2){ hideSearchResults(); return; }
+    searchTimeout = setTimeout(()=> doSearch(q), 160);
+  });
+
+  function doSearch(q){
+    const found = productos.filter(p=> p.nombre.toLowerCase().includes(q.toLowerCase()) || p.categoria.toLowerCase().includes(q.toLowerCase()));
+    if(found.length===0){ buscarResult.innerHTML = '<div class="search-result-item">No se encontraron productos</div>'; buscarResult.style.display='block'; return; }
+    buscarResult.innerHTML = found.slice(0,6).map(p=>`
+      <div class="search-result-item search-preview" onclick="openFromSearch('${escapeHtml(p.nombre)}')">\n        <img src="${p.imagen}">\n        <div class=\"meta\">\n          <div class=\"name\">${escapeHtml(p.nombre)}</div>\n          <div class=\"price\">${formatPrice(p.precio)}</div>\n          <div style=\"font-size:.85rem;color:#666;margin-top:.2rem\">${escapeHtml(p.descripcion).slice(0,80)}${p.descripcion.length>80? '...':''}</div>\n        </div>\n      </div>
+    `).join('');
+    buscarResult.style.display='block';
+  }
+
+  function openFromSearch(name){ hideSearchResults(); openProduct(productos.find(p=>p.nombre===name)); }
+  function hideSearchResults(){ buscarResult.style.display='none'; searchBox.value=''; }
+
+  document.addEventListener('click', (e)=>{ const box = document.querySelector('.buscarContainer'); if(!box.contains(e.target)) buscarResult.style.display='none'; });
+
+  /* ===== Utilities ===== */
+  function escapeHtml(str){ return (str+'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;'); }
+
+  /* ===== Init ===== */
+  function init(){
+    startFeatured();
+    buildCarousel('carousel1', productos.slice(0,8));
+    buildCarousel('carousel2', productos.slice(3).concat(productos.slice(0,3)));
+    wireCarousel('carousel1Prev','carousel1Next','carousel1');
+    wireCarousel('carousel2Prev','carousel2Next','carousel2');
+    document.getElementById('todosProdcts').innerHTML = produtosToCards(productos);
+    updateCartUI();
+  }
+
+  window.addEventListener('load', init);
+  </script>
 </body>
 </html>
