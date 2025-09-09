@@ -6,7 +6,6 @@
   <title>Hermanos Jota - Catálogo</title>
   <link rel="stylesheet" href="Styles/main.css">
   <style>
-    /* Small extra styles to improve interactivity for featured + carousels */
     .featured-wrap { display:flex; gap:1rem; align-items:center; margin-bottom:2rem; }
     .featured-card { flex:1; background:white; padding:1rem; border-radius:12px; box-shadow:0 8px 20px rgba(0,0,0,0.08); text-align:center; transition:transform .35s, box-shadow .35s, opacity .4s; cursor:pointer; }
     .featured-card img{ width:100%; height:160px; object-fit:cover; border-radius:10px; }
@@ -14,7 +13,6 @@
     .fade-in { animation: fadeIn .45s ease both; }
     @keyframes fadeIn{ from{opacity:0; transform:translateY(6px);} to{opacity:1; transform:none;} }
 
-    /* Compact carousel controls */
     .carousel-row { position:relative; margin-bottom:2rem; }
     .carousel-track { display:flex; gap:1rem; overflow:hidden; scroll-behavior:smooth; }
     .carousel-item { min-width:260px; max-width:260px; flex:0 0 260px; background:white; padding:1rem; border-radius:12px; box-shadow:0 8px 20px rgba(0,0,0,0.06); cursor:pointer; }
@@ -23,14 +21,12 @@
     .carousel-btn.left{ left:-10px; }
     .carousel-btn.right{ right:-10px; }
 
-    /* Search preview card */
     .search-preview { display:flex; gap:.6rem; align-items:center; padding:.6rem; }
     .search-preview img{ width:64px; height:52px; object-fit:cover; border-radius:6px; }
     .search-preview .meta{ font-size:.95rem; }
     .search-preview .meta .name{ font-weight:600; color:#333; }
     .search-preview .meta .price{ color:#c17852; font-weight:700; }
 
-    /* Small responsiveness */
     @media (max-width:800px){ .featured-card img{ height:120px } .carousel-item{ min-width:200px; max-width:200px } }
   </style>
 </head>
@@ -66,10 +62,8 @@
     <section id="seccHome">
       <h2 class="secTitulo">Mejores Productos</h2>
 
-      <!-- Featured 3 that change randomly -->
       <div id="featuredWrap" class="featured-wrap" aria-live="polite"></div>
 
-      <!-- Two carousels -->
       <h2 class="secTitulo">Colección Destacada</h2>
       <div class="carousel-row">
         <button class="carousel-btn left" id="carousel1Prev">◀</button>
@@ -88,7 +82,6 @@
       <div class="productoGrid" id="todosProdcts"></div>
     </section>
 
-    <!-- Product Detail Modal -->
     <div class="modal" id="productModal" aria-modal="true" role="dialog">
       <div class="modal-content">
         <span class="modal-close" id="modalClose">&times;</span>
@@ -96,7 +89,6 @@
       </div>
     </div>
 
-    <!-- Cart Sidebar -->
     <div class="cartSidebar" id="cartSidebar">
         <div class="carritoHeader">
             <h3 id="carritoTitulo">0 Productos</h3>
@@ -122,7 +114,6 @@
   </footer>
 
   <script>
-  /* ===== DATA (copiado desde info/product JSON) ===== */
   const productos = [
     { nombre: "Aparador Uspallata", categoria: "Aparadores", descripcion: "Aparador de seis puertas...", medidas: "180 × 45 × 75 cm", materiales: "Nogal macizo FSC®", acabado: "Aceite natural ecológico", precio: 89900, imagen: "imagenes/Aparador_Uspallata.png" },
     { nombre: "Biblioteca Recoleta", categoria: "Bibliotecas", descripcion: "Sistema modular de estantes...", medidas: "100 × 35 × 200 cm", materiales: "Estructura de acero, estantes de roble", acabado: "Laca mate ecológica", precio: 34900, imagen: "imagenes/Biblioteca_Recoleta.png" },
@@ -137,17 +128,14 @@
     { nombre: "Silla de Trabajo Belgrano", categoria: "Sillas de Oficina", descripcion: "Silla ergonómica regulable...", medidas: "60 × 60 × 90-100 cm", materiales: "Malla técnica, tejido reciclado", acabado: "Base cromada", precio: 24900, imagen: "imagenes/Silla_de_Trabajo_Belgrano.png" }
   ];
 
-  /* ===== App state ===== */
   let cart = JSON.parse(localStorage.getItem('hj_cart') || '[]');
   let featuredInterval;
 
-  /* ===== Helpers ===== */
   const $ = sel => document.querySelector(sel);
   const $$ = sel => Array.from(document.querySelectorAll(sel));
 
   function formatPrice(n){ return '$' + n.toLocaleString(); }
 
-  /* ===== Featured 3 (random change every 4s) ===== */
   function renderFeatured(){
     const wrap = $('#featuredWrap');
     const shuffled = [...productos].sort(()=>Math.random()-0.5).slice(0,3);
@@ -164,7 +152,6 @@
 
   function startFeatured(){ renderFeatured(); clearInterval(featuredInterval); featuredInterval = setInterval(()=>{ renderFeatured(); }, 4000); }
 
-  /* ===== Carousels (simple scroll) ===== */
   function buildCarousel(trackId, items){
     const track = document.getElementById(trackId);
     track.innerHTML = '';
@@ -181,7 +168,6 @@
     next.addEventListener('click', ()=>{ track.scrollBy({left:280, behavior:'smooth'}); });
   }
 
-  /* ===== Products grid ===== */
   function renderAllProducts(){
     const container = document.getElementById('todosProdcts');
     container.innerHTML = produtosToCards(productos);
@@ -193,15 +179,12 @@
     `).join('');
   }
 
-  /* ===== Modal / Product detail ===== */
   function openProduct(product){
     const modal = $('#productModal');
     const box = $('#productDetalle');
     box.innerHTML = `\n      <div class=\"product-detail-image\" style=\"flex:1\">\n        <img src=\"${product.imagen}\" alt=\"${escapeHtml(product.nombre)}\">\n      </div>\n      <div class=\"product-detail-info\" style=\"flex:1\">\n        <h2 class=\"product-detail-title\">${escapeHtml(product.nombre)}</h2>\n        <p class=\"product-detail-description\">${escapeHtml(product.descripcion)}</p>\n        <div class=\"product-specs\">\n          <div class=\"specs-grid\">\n            <div class=\"spec-item\"><div class=\"spec-title\">Medidas</div><div>${product.medidas||'-'}</div></div>\n            <div class=\"spec-item\"><div class=\"spec-title\">Materiales</div><div>${product.materiales||'-'}</div></div>\n            <div class=\"spec-item\"><div class=\"spec-title\">Acabado</div><div>${product.acabado||'-'}</div></div>\n          </div>\n        </div>\n        <div class=\"quantity-selector\">\n          <button class=\"quantity-btn\" id=\"qMinus\">−</button>\n          <input type=\"number\" class=\"quantity-input\" id=\"quantityInput\" value=\"1\" min=\"1\">\n          <button class=\"quantity-btn\" id=\"qPlus\">+</button>\n        </div>\n        <div style=\"display:flex;align-items:center;justify-content:space-between;gap:1rem\">\n          <div style=\"font-size:1.5rem;font-weight:bold;color:#c17852\">${formatPrice(product.precio)}</div>\n          <button class=\"add-to-cart-btn\" id=\"addCartBtn\">Agregar al Carrito</button>\n        </div>\n      </div>\n    `;
-    // wire quantity + add
     modal.style.display = 'block';
     setTimeout(()=>{ $('#quantityInput').value = 1; $('#qMinus').onclick = ()=> changeQuantity(-1); $('#qPlus').onclick = ()=> changeQuantity(1); $('#addCartBtn').onclick = ()=> { addToCart(product); }; }, 60);
-    // close mobile search
     hideSearchResults();
   }
 
@@ -219,7 +202,6 @@
     if(e.target === document.getElementById('productModal')) document.getElementById('productModal').style.display='none';
   });
 
-  /* ===== Cart ===== */
   function updateCartUI(){
     const cartItems = $('#cartItems'); const cartCount = $('#cartCount'); const cartTitle = $('#carritoTitulo'); const cartTotal = $('#cartTotal');
     const totalItems = cart.reduce((s,i)=>s+i.quantity,0);
@@ -236,7 +218,7 @@
     localStorage.setItem('hj_cart', JSON.stringify(cart));
   }
 
-  function addToCart(product){ const qty = Math.max(1, parseInt($('#quantityInput').value||1)); const existing = cart.find(i=>i.nombre===product.nombre); if(existing) existing.quantity += qty; else cart.push({...product, quantity: qty}); updateCartUI(); $('#productModal').style.display='none'; /* small animation */ const cartBtn = document.querySelector('.cartImagen'); cartBtn.animate([{transform:'scale(1.15)'},{transform:'scale(1)'}],{duration:220}); }
+  function addToCart(product){ const qty = Math.max(1, parseInt($('#quantityInput').value||1)); const existing = cart.find(i=>i.nombre===product.nombre); if(existing) existing.quantity += qty; else cart.push({...product, quantity: qty}); updateCartUI(); $('#productModal').style.display='none'; const cartBtn = document.querySelector('.cartImagen'); cartBtn.animate([{transform:'scale(1.15)'},{transform:'scale(1)'}],{duration:220}); }
   function removeFromCart(name){ cart = cart.filter(i=>i.nombre!==name); updateCartUI(); }
   function decreaseCart(name){ const it = cart.find(i=>i.nombre===name); if(!it) return; it.quantity = Math.max(0, it.quantity-1); if(it.quantity===0) removeFromCart(name); else updateCartUI(); }
   function increaseCart(name){ const it = cart.find(i=>i.nombre===name); if(!it) return; it.quantity++; updateCartUI(); }
@@ -244,7 +226,6 @@
 
   function toggleCart(){ const s = $('#cartSidebar'); s.classList.toggle('open'); }
 
-  /* ===== Search preview ===== */
   const searchBox = document.getElementById('searchBox');
   const buscarResult = document.getElementById('buscarResult');
   let searchTimeout;
@@ -270,10 +251,8 @@
 
   document.addEventListener('click', (e)=>{ const box = document.querySelector('.buscarContainer'); if(!box.contains(e.target)) buscarResult.style.display='none'; });
 
-  /* ===== Utilities ===== */
   function escapeHtml(str){ return (str+'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;'); }
 
-  /* ===== Init ===== */
   function init(){
     startFeatured();
     buildCarousel('carousel1', productos.slice(0,8));
