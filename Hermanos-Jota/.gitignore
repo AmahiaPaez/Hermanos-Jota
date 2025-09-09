@@ -2,3 +2,635 @@
 node_modules/
 *.log
 .DS_Store
+
+
+productos:
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detalle de Producto</title>
+  <link rel="stylesheet" href="productos.css">
+
+</head>
+<body>
+  
+
+  <div id="official-header-placeholder">
+    <!-- Componente oficial del header se insertará aquí -->
+  </div>
+
+
+  <!-- 
+  <header class="encabezado">
+    <div class="contenedor">
+      <div class="logo">
+        <div class="icono-logo">
+          <img src="imagenes/logo.svg" height="80" alt="Logo">
+        </div>
+      </div>
+      <nav class="navegacion">
+        <a href="index.html" class="enlace-nav">Home</a>
+        <a href="productos.html" class="enlace-nav">Products</a>
+        <a href="#" class="enlace-nav">Contact Me</a>
+      </nav>
+      <div class="derecha-encabezado">
+        <div class="contenedor-busqueda-carrito">
+          <div class="seccion-busqueda">
+            <span class="icono-busqueda">🔍</span>
+            <input type="text" placeholder="Search" id="busqueda" class="input-busqueda">
+          </div>
+          <div class="seccion-carrito">
+            <span class="icono-carrito"><img src="imagenes/camion.png" height="40" width="40" alt="Carrito"></span>
+            <span class="contador-carrito" id="contador-carrito">0</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  -->
+
+  <!-- Principal -->
+  <main class="principal">
+    <div class="contenedor">
+      <section class="seccion-producto" id="detalle-producto">
+       
+      </section>
+
+      <!-- Carrusel 1 -->
+      <section class="seccion-productos">
+        <h2 class="titulo-seccion">Some Products</h2>
+        <div class="carrusel-productos">
+          <button class="boton-carrusel prev" data-target="carrusel1">‹</button>
+          <div class="cuadricula-productos" id="carrusel1"></div>
+          <button class="boton-carrusel sig" data-target="carrusel1">›</button>
+        </div>
+      </section>
+
+      <!-- Carrusel 2 -->
+      <section class="seccion-productos">
+        <h2 class="titulo-seccion">Shelves and catgSeg</h2>
+        <div class="carrusel-productos">
+          <button class="boton-carrusel prev" data-target="carrusel2">‹</button>
+          <div class="cuadricula-productos" id="carrusel2"></div>
+          <button class="boton-carrusel sig" data-target="carrusel2">›</button>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  
+  <div id="official-footer-placeholder">
+    <!-- Componente oficial del footer se insertará aquí -->
+  </div>
+
+
+  <!-- 
+  <footer class="pie-pagina">
+    <div class="iconos-pie">
+      <div class="icono-pie"><img src="imagenes/wsp.png" height="50" alt=""></div>
+      <div class="icono-pie"><img src="imagenes/insta.png" height="50" alt=""></div>
+      <div class="icono-pie"><img src="imagenes/email.png" height="50" width="40" alt=""></div>
+    </div>
+  </footer>
+  -->
+
+  <!-- Scripts -->
+  <script src="js/productos.js"></script>
+  
+</body>
+</html>
+
+
+
+css:
+
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { height: 100%; }
+{
+  font-family: "Arial", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+  background-color: #f8f6f3;
+  color: #333;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.5;
+
+
+.contenedor {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.encabezado {
+  background-color: #f8f6f3;
+  padding: 20px 0;
+  border-bottom: 1px solid #eee;
+}
+.encabezado .contenedor { display:flex; align-items:center; justify-content:space-between; gap:20px; }
+.logo { display:flex; align-items:center; gap:12px; }
+.icono-logo { width:50px; height:50px; border-radius:10px; display:flex; align-items:center; justify-content:center;  color:white; font-weight:700; }
+.navegacion { display:flex; gap:28px; align-items:center; }
+.enlace-nav { text-decoration:none; color:#b8704a; font-size:18px; font-weight:600; }
+.enlace-nav:hover { color:#8b5538; text-decoration:none; }
+
+.derecha-encabezado { display:flex; align-items:center; gap:14px; }
+.contenedor-busqueda-carrito {
+  display:flex; align-items:center; border:2px solid #b8704a; border-radius:10px; overflow:hidden; background:white;
+  position: relative;
+  z-index: 1000;
+}
+.seccion-busqueda { display:flex; align-items:center; padding:8px 12px; gap:8px; flex:1; }
+.icono-busqueda { font-size:16px; color:#b8704a; }
+.input-busqueda { border:none; outline:none; background:transparent; color:#d4a574; font-weight:700; font-size:15px; }
+.input-busqueda::placeholder { color:#d4a574; font-weight:700; }
+.seccion-carrito { display:flex; align-items:center; justify-content:center; padding:10px 12px; border-left:2px solid #b8704a; position:relative; background:white; }
+.contador-carrito { position:absolute; top:6px; right:8px; background:#d4a574; color:white; width:22px; height:22px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:700; }
+*/
+
+
+.principal { padding: 40px 0 60px; }
+
+.seccion-producto {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: stretch; 
+  margin-bottom: 40px;
+  width: 100%;
+}
+
+.imagen-producto,
+.info-producto {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.img-card {
+  background: white;
+  border-radius: 14px;
+  padding: 36px;
+  box-shadow: 0 18px 40px rgba(0,0,0,0.08);
+  position: relative; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1; 
+}
+
+.img-card .img-silla {
+  max-width: 460px;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.selector-cantidad {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 18px;
+  display: inline-flex;
+  align-items: center;
+  background-color: #d4a574;
+  border-radius: 30px;
+  padding: 6px;
+  box-shadow: 0 8px 22px rgba(0,0,0,0.08);
+  z-index: 3;
+}
+
+.selector-cantidad .boton-cant {
+  background: transparent;
+  border: none;
+  color: white;
+  padding: 8px 14px;
+  font-size: 18px;
+  cursor: pointer;
+  font-weight:700;
+}
+.selector-cantidad .boton-cant:active { transform: translateY(1px); }
+
+.selector-cantidad .numero-cant {
+  color: #fffaf7;
+  padding: 8px 16px;
+  border-radius: 8px;
+  margin: 0 6px;
+  font-weight:800;
+  min-width: 36px;
+  text-align: center;
+}
+
+.info-producto { justify-content: space-between; }
+
+.titulo-producto {
+  font-size: 48px;
+  color: #b8704a;
+  font-weight: 800;
+  margin-bottom: 18px;
+  line-height: 1.05;
+}
+
+.descripcion-producto {
+  font-size: 15.5px;
+  color: #7a8b7a;
+  margin-bottom: 24px;
+  line-height: 1.8;
+  max-width: 100%;
+}
+
+.cuadricula-especificaciones {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 18px;
+  margin-bottom: 20px;
+  align-items: start;
+}
+
+.tarjeta-especificacion {
+  background: #c9958a;
+  padding: 18px;
+  border-radius: 12px;
+  text-align: center;
+  min-height: 84px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+.tarjeta-especificacion h3 { color:#8b5538; font-size:15px; margin-bottom:8px; font-weight:700; }
+.tarjeta-especificacion p { color:white; font-size:13px; line-height:1.4; }
+
+.info-footer { margin-top: 6px; }
+.boton-anadir {
+  padding: 12px 20px;
+  border-radius: 8px;
+  background-color: #c9958a;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: 800;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.06);
+}
+.boton-anadir:active { transform: translateY(1px); }
+
+.seccion-productos { margin: 40px 0; }
+.titulo-seccion { color:#7a8b7a; font-size:28px; margin-bottom:18px; font-weight:700; }
+
+.carrusel-productos {
+  display:flex; align-items:center; gap:18px;
+}
+
+.boton-carrusel {
+  background-color: #c9958a;
+  border: none;
+  color: white;
+  width: 50px; height: 50px;
+  border-radius: 50%;
+  display:flex; align-items:center; justify-content:center;
+  font-size:24px; font-weight:700; cursor:pointer;
+  flex-shrink:0;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+}
+.boton-carrusel:hover { background:#b8704a; }
+
+.cuadricula-productos {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  flex: 1;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding-bottom: 6px;
+}
+
+.tarjeta-producto {
+  background: white;
+  border-radius: 14px;
+  padding: 12px;
+  display:flex; flex-direction:column; align-items:center;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+  transition: transform .25s ease;
+}
+.tarjeta-producto:hover { transform: translateY(-6px); }
+
+.card-link {
+  text-decoration: none;
+  color: inherit;
+  width:100%;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+
+.tarjeta-producto .thumb {
+  width:100%;
+  border-radius:10px;
+  overflow:hidden;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.tarjeta-producto img { width:100%; height:140px; object-fit:cover; display:block; }
+
+.nombre-card {
+  margin-top:12px;
+  font-size:16px;
+  color:#8b5538;
+  text-align:center;
+  font-weight:700;
+  text-decoration:none;
+}
+.categoria-card {
+  font-size:13px;
+  color:#7a8b7a;
+  margin-top:6px;
+  text-align:center;
+}
+
+/*
+.pie-pagina { background:#A0522D; padding:28px 0; margin-top:30px; }
+.iconos-pie { display:flex; justify-content:center; gap:36px; }
+.icono-pie { background: rgba(255,255,255,0.18); color:white; width:60px; height:60px; border-radius:15px; display:flex; align-items:center; justify-content:center; font-size:22px; cursor:pointer; }
+*/
+
+
+.hidden { display:none !important; }
+.centrado { text-align:center; }
+
+
+@media (max-width: 992px) {
+  .seccion-producto { grid-template-columns: 1fr; gap: 30px; }
+  .cuadricula-especificaciones { grid-template-columns: repeat(2,1fr); }
+  .cuadricula-productos { grid-template-columns: repeat(3,1fr); }
+  .titulo-producto { font-size:36px; }
+}
+
+@media (max-width: 768px) {
+
+  /*
+  .contenedor-busqueda-carrito { display:none; }
+  .navegacion { display:none; }
+  */
+  .cuadricula-productos { grid-template-columns: repeat(2,1fr); }
+  .selector-cantidad { bottom: 12px; }
+  .img-card { padding: 20px; }
+  .titulo-producto { font-size:32px; }
+}
+
+@media (max-width: 480px) {
+  .cuadricula-especificaciones { grid-template-columns: 1fr; }
+  .cuadricula-productos { grid-template-columns: 1fr; }
+  .titulo-producto { font-size:28px; }
+  .img-card { padding: 14px; }
+  .preview-item img { width: 56px; height: 56px; } 
+  .search-preview { width: 92vw; right: 4vw; left: 4vw; } 
+}
+
+
+js:
+
+async function cargarProductos() {
+  const response = await fetch("info_Producto.json");
+  const data = await response.json();
+  return new Promise(resolve => setTimeout(() => resolve(data.catalogo.Productos), 600));
+}
+
+function obtenerParametro(nombre) {
+  const params = new URLSearchParams(window.location.search);
+  return params.get(nombre);
+}
+
+function slugify(text) {
+  if (!text) return "";
+  return text.toString().toLowerCase()
+    .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^a-z0-9\s-]/g, "")
+    .trim()
+    .replace(/\s+/g, "-");
+}
+
+function renderizarDetalle(Producto) {
+  const contenedor = document.getElementById("detalle-Producto");
+  if (!contenedor) return;
+
+  const humanLabel = key => {
+    const mapa = {
+      medidas: "Medidas",
+      materiales: "Materiales",
+      acabado: "Acabado",
+      rotacion: "Rotación",
+      garantia: "Garantía",
+      peso: "Peso",
+      capacidad: "Capacidad",
+      tapizado: "Tapizado",
+      confort: "Confort",
+      estructura: "Estructura",
+      extension: "Extensión",
+      almacenamiento: "Almacenamiento",
+      carga_maxima: "Carga máxima",
+      caracteristicas: "Características",
+      regulacion: "Regulación",
+      certificacion: "Certificación",
+      incluye: "Incluye",
+      sostenibilidad: "Sostenibilidad",
+      rellenado: "Relleno"
+    };
+    if (mapa[key]) return mapa[key];
+    return key
+      .replace(/_/g, " ")
+      .replace(/([A-Z])/g, " $1")
+      .replace(/\b\w/g, l => l.toUpperCase())
+      .trim();
+  };
+
+  const prioridad = [
+    "medidas",
+    "materiales",
+    "acabado",
+    "peso",
+    "capacidad",
+    "rotacion",
+    "garantia",
+    "tapizado",
+    "confort"
+  ];
+
+  const ignoreKeys = new Set([
+    "nombre",
+    "categoria",
+    "descripcion",
+    "imagen",
+    "id",
+    "precio"
+  ]);
+
+  const specs = [];
+  prioridad.forEach(k => {
+    if (Producto[k] !== undefined && Producto[k] !== null && String(Producto[k]).trim() !== "") {
+      specs.push({ key: k, value: Producto[k] });
+    }
+  });
+  Object.keys(Producto).forEach(k => {
+    if (ignoreKeys.has(k)) return;
+    if (prioridad.includes(k)) return;
+    const val = Producto[k];
+    if (val === undefined || val === null) return;
+    const s = String(val).trim();
+    if (s === "") return;
+    specs.push({ key: k, value: s });
+  });
+
+  const imagenSrc = Producto.imagen
+    ? `${Producto.imagen}`
+    : (Producto.nombre ? `imagenes/${slugify(Producto.nombre)}.png` : "imagenes/placeholder.png");
+
+  contenedor.innerHTML = `
+    <div class="imagen-Producto">
+      <div class="img-card">
+        <img src="${imagenSrc}" alt="${Producto.nombre || ''}" class="img-silla" onerror="this.src='imagenes/placeholder.png'">
+        <div class="selector-cantidad centrado" id="selector-externo">
+          <button class="boton-cant" id="menos" aria-label="Restar">−</button>
+          <span class="numero-cant" id="cantidad">1</span>
+          <button class="boton-cant" id="mas" aria-label="Sumar">+</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="info-Producto">
+      <div class="info-top">
+        <h1 class="titulo-Producto">${Producto.nombre || ''}</h1>
+        <p class="descripcion-Producto">${Producto.descripcion || ''}</p>
+
+        <div class="cuadricula-especificaciones" id="especificaciones">
+        </div>
+      </div>
+
+      <div class="info-footer">
+        <button id="btn-carrito" class="boton-cant boton-anadir">Añadir al Carrito</button>
+      </div>
+    </div>
+  `;
+
+  const contSpecs = document.getElementById("especificaciones");
+  if (!contSpecs) return;
+
+  if (specs.length === 0) {
+    contSpecs.innerHTML = `<p style="color:#7a8b7a; font-size:14px;">No hay especificaciones adicionales para este Producto.</p>`;
+  } else {
+    contSpecs.innerHTML = specs.map(s => {
+      const valor = String(s.value).replace(/\n/g, "<br>");
+      return `
+        <div class="tarjeta-especificacion">
+          <h3>${humanLabel(s.key)}</h3>
+          <p>${valor}</p>
+        </div>
+      `;
+    }).join("");
+  }
+
+  let cantidad = 1;
+  const menosEl = document.getElementById("menos");
+  const masEl = document.getElementById("mas");
+  const cantEl = document.getElementById("cantidad");
+  if (menosEl && masEl && cantEl) {
+    menosEl.addEventListener("click", () => {
+      if (cantidad > 1) cantidad--;
+      cantEl.textContent = cantidad;
+    });
+    masEl.addEventListener("click", () => {
+      cantidad++;
+      cantEl.textContent = cantidad;
+    });
+  }
+
+  const btnCarrito = document.getElementById("btn-carrito");
+  if (btnCarrito) {
+    btnCarrito.addEventListener("click", () => {
+      let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+      carrito.push({ ...Producto, cantidad });
+      localStorage.setItem("carrito", JSON.stringify(carrito));
+      alert(`${cantidad} ${Producto.nombre || 'Producto'} añadido(s) al carrito`);
+      if (typeof actualizarContadorCarrito === "function") actualizarContadorCarrito();
+    });
+  }
+}
+
+function renderizarCarrusel(Productos, id) {
+  const carrusel = document.getElementById(id);
+  if (!carrusel) return;
+  carrusel.innerHTML = "";
+
+  Productos.forEach(prod => {
+    const card = document.createElement("div");
+    card.classList.add("tarjeta-Producto");
+
+    const imgSrc = prod.imagen ? prod.imagen : `imagenes/${slugify(prod.nombre)}.png`;
+
+    card.innerHTML = `
+      <a class="card-link" href="Producto.html?id=${encodeURIComponent(prod.nombre)}">
+        <div class="thumb">
+          <img src="${imgSrc}" alt="${prod.nombre}" onerror="this.src='imagenes/placeholder.png'">
+        </div>
+        <h3 class="nombre-card">${prod.nombre}</h3>
+        <p class="categoria-card">${prod.categoria || ""}</p>
+      </a>
+    `;
+    carrusel.appendChild(card);
+  });
+}
+
+function activarCarrusel() {
+  document.querySelectorAll(".boton-carrusel").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const target = document.getElementById(btn.dataset.target);
+      if (!target || !target.firstElementChild) return;
+      const primeraTarjeta = target.firstElementChild;
+      const style = getComputedStyle(primeraTarjeta);
+      const gap = parseInt(style.marginRight || 20, 10) || 20;
+      const cardWidth = primeraTarjeta.getBoundingClientRect().width + gap;
+      target.scrollBy({
+        left: btn.classList.contains("sig") ? cardWidth : -cardWidth,
+        behavior: "smooth"
+      });
+    });
+  });
+}
+
+function actualizarContadorCarrito() {
+  const contador = document.getElementById("contador-carrito");
+  if (!contador) return;
+  const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+  const total = carrito.reduce((s, item) => s + (item.cantidad || 0), 0);
+  contador.textContent = total;
+}
+
+function formatPrice(valor) {
+  if (valor === undefined || valor === null || String(valor).trim() === "") return "";
+  let num = null;
+  if (typeof valor === "number") num = valor;
+  else {
+    const cleaned = String(valor).replace(/[^\d,.-]/g, "").replace(",", ".");
+    num = Number(cleaned);
+    if (Number.isNaN(num)) num = null;
+  }
+  if (num === null) return String(valor);
+  return new Intl.NumberFormat("es-AR", { style: "currency", currency: "ARS", maximumFractionDigits: 0 }).format(num);
+}
+
+document.addEventListener("DOMContentLoaded", async () => {
+  const Productos = await cargarProductos();
+  const id = obtenerParametro("id");
+  const Producto = Productos.find(p => p.nombre === id) || Productos[0];
+
+  renderizarDetalle(Producto);
+
+  renderizarCarrusel(Productos.slice(0, 4), "carrusel1");
+  renderizarCarrusel(Productos.slice(4, 8), "carrusel2");
+  activarCarrusel();
+
+  actualizarContadorCarrito();
+});

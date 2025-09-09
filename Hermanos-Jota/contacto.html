@@ -5,116 +5,95 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contacto</title>
     <link rel="stylesheet" href="Styles/contacto.css">
-    <link rel="stylesheet" href="Styles/header.css">
-    <link rel="stylesheet" href="Styles/footer.css">
+    <link rel="stylesheet" href="Styles/main.css">
 </head>
 <body>
-     <header>
-        <nav>
-          <div class="navHeader">
-            <div class="navLogo">
-              <a href="#" class="logo">
-                <img src="imagenes/logo.svg" alt="Hermanos Jota" class="logo-image">
-              </a>
+    <header>
+        <div class="header">
+            <div class="logo">
+                <div class="logoImg">
+                    <img src="imagenes/logo.svg" alt="Logo Hermanos Jota" height="40">
+                </div>
             </div>
-            <div class="navMenuBtn" id="menu-btn">
-              <i class="ri-menu-line"></i>
-            </div>
-          </div>
-          <ul class="navLinks" id="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#productos">Productos</a></li>
-            <li><a href="contacto.html">Contacto</a></li>
-          </ul>
-          <div class="nav__search" id="nav-search">
-            <input type="text" placeholder="Search" />
-            <span class="search-icon">
-              <img src="imagenes/Lupa.png" alt="Buscar" class="search-image">
-            </span>
-            <div class="cartImagen">
-              <img src="imagenes/Carrito.png" alt="Carrito" class="cart-image">
-              <span class="cartCont">0</span>
-            </div>
-          </div>
-        </nav>
-    </header>
-
-
-<form id="formularioContacto">
-  
-  <div class="form-group">
-   <label for="nombreUsuario">Nombre</label>
-   <input type="text" id="nombreUsuario" name="nombre">
-  </div>
-  
-  <div class="form-group">
-    <label for="emailUsuario">Email</label>
-    <input type="email" id="emailUsuario" name="mail">
-  </div>
-  
-  <div class="form-group">
-    <label for="mensaje">Mensaje</label>
-    <textarea id="mensajeUsuario" name="mensaje" rows="4"></textarea>
-  </div>
-  
-  <button type="submit">Enviar</button>
-  <div id="estado"></div>
-  
-</form>
-    <footer>
-        <div class="footerContainer">
-            <div class="sec Aboutus">
-                <h2>Conocenos</h2>
-                    <p>Hermanos Jota es el redescubrimiento de un arte olvidado: crear muebles que no solo sirven una función, sino que alimentan el alma. Existimos en la intersección entre herencia e innovación, donde la calidez del optimismo de los años 60 se encuentra con la conciencia de la sustentabilidad del 2025. Cada pieza cuenta una historia de artesanía que honra el pasado mientras abraza el futuro.</p>
-                    <div class="sci">
-                        <li>
-                            <a href="https://www.instagram.com/hermanosjota_ba" target="_blank">
-                            <img src="imagenes/insta.png" alt="Instagram">
-                            <span>@hermanosjota_ba</span>
-                            </a>
-                        </li>
-                    </div>
-            </div>
-            <div class="sec quicklinks">
-                <h2>Hermanos Jota | Casa Taller</h2>
-                <ul>
-                    <li><a href="">Av. San Juan 2847</a></li>
-                    <li><a href="">C1232AAB — Barrio de San Cristóbal</a></li>
-                    <li><a href="">Ciudad Autónoma de Buenos Aires, Argentina</a></li>
-                </ul>
-            </div>
-            <div class="sec quicklinks">
-                <h2>Horarios</h2>
-                <ul>
-                    <li><a href="#">Lunes a Viernes: 10:00 - 19:00</a></li>
-                    <li><a href="#">Sábados: 10:00 - 14:00</a></li>
-                </ul>
-            </div>
-            <div class="sec contact">
-                <h2>Contacto</h2>
-                <ul class="info">
-                    <li>
-                        <span><img src="imagenes/wsp.png" alt="Whatsapp"></span>
-                        <p><a href="telefono">+54 11 4567-8900</a></p>
-                    </li>
-                    <li>
-                        <span><img src="imagenes/email.png" alt="Email"></span>
-                        <p><a href="gmail">info@hermanosjota.com.ar | Email general</a></p>
-                    </li>
-                    <li>
-                        <span><img src="imagenes/email.png" alt="Email"></span>
-                        <p><a href="gmail">ventas@hermanosjota.com.ar | Ventas </a></p>
-                    </li>
-                </ul>
+            
+            <nav class="nav">
+                <a href="home.html">Home</a>
+                <a href="index.html">Productos</a>
+                <a href="contacto.html">Contacto</a>
+            </nav>
+            
+            <div class="headerR">
+                <div class="buscarContainer">
+                    <input type="text" class="buscarBox" placeholder="Buscar" oninput="bucadorProduct(this.value)">
+                    <div class="buscarResultado" id="buscarResult"></div>
+                </div>
+                <div class="cartImagen" onclick="toggleCart()">
+                    🛒
+                    <span class="cartCont" id="cartCount">0</span>
+                </div>
             </div>
         </div>
-       <div class="copyright">© 2025 Hermanos Jota. Todos los derechos reservados. Este manual es propiedad de Hermanos Jota Muebles.</div> 
-    </footer>
-    
-    <div class="copyriht">
-        <p><strong>© 2025 Hermanos Jota</strong>. Todos los derechos reservados. Este manual es propiedad de Hermanos Jota Muebles.</p>
+    </header>
+
+    <main>
+        <form id="formularioContacto">
+            <h1 style="text-align: center; color: #A0522D; margin-bottom: 2rem;">Contáctanos</h1>
+            
+            <div class="form-group">
+                <label for="nombreUsuario">Nombre</label>
+                <input type="text" id="nombreUsuario" name="nombre" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="emailUsuario">Email</label>
+                <input type="email" id="emailUsuario" name="mail" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="mensajeUsuario">Mensaje</label>
+                <textarea id="mensajeUsuario" name="mensaje" rows="4" required></textarea>
+            </div>
+            
+            <button type="submit">Enviar</button>
+            <div id="estado"></div>
+        </form>
+    </main>
+
+    <!-- Cart Sidebar -->
+    <div class="cartSidebar" id="cartSidebar">
+        <div class="carritoHeader">
+            <h3 id="carritoTitulo">0 Productos</h3>
+            <span class="cartCerrar" onclick="toggleCart()">&times;</span>
+        </div>
+        <div class="carritoContent">
+            <div id="cartItems">
+                <!-- Cart items will be populated by JavaScript -->
+            </div>
+            <div class="cartTotal">
+                <div class="cartTotal-amount" id="cartTotal">$0</div>
+                <button class="checkoutBtn">Comprar</button>
+            </div>
+        </div>
     </div>
+
+    <footer>
+        <div class="footer">
+            <div class="footerImg">
+                <img src="imagenes/insta.png" alt="Instagram">
+            </div>
+            <div class="footerImg">
+                <img src="imagenes/email.png" alt="Email">
+            </div>
+            <div class="footerImg">
+                <img src="imagenes/wsp.png" alt="WhatsApp">
+            </div>
+        </div>
+    </footer>
+
+
+
    <script src="js/contacto.js"></script>
-   <script src="js/header.js"></script>
+  
+   <script src="js/main.js"></script>
 </body>
 </html>

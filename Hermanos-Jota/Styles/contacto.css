@@ -1,82 +1,105 @@
 body {
-  display: flex;
-  flex-direction: column; 
-  align-items: center; 
-  margin: 0;
-  background-color: #fff;
-  color: #3e2723;
-  font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
-
-form{
-  background-color: #F5E6D3;
-  border: 2px solid #D4BFAA;
-  padding: 2rem;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  max-width: 500px;
-  width: 90%;
-  margin: 120px auto 100px auto; 
-  box-sizing: border-box;
-
+main {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 0;
 }
+
+form {
+    background-color: #F5E6D3;
+    border: 2px solid #D4BFAA;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 90%;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
 .form-group {
-  display: flex;
-  align-items: center;
-  margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
 }
 
 .form-group label {
-  width: 120px; 
-  margin-bottom: 0; 
-  font-weight: bold;
-  color: #A0522D;
+    width: 120px; 
+    margin-bottom: 0; 
+    font-weight: bold;
+    color: #A0522D;
 }
 
 .form-group input,
-.form-group textarea{
-  flex: 10; 
-  padding: 0.5rem;
-  border: 1px solid #ccc;
-  border-radius: 6px;
+.form-group textarea {
+    flex: 1; 
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
 }
 
-button{
+button {
     width: 25%;
     border-radius: 6px;
-    background-color:#D4A437 ;
-    border: 1px solid #D4A437 ;
+    background-color: #D4A437;
+    border: 1px solid #D4A437;
     padding: 0.8rem;
-    display:block ;
+    display: block;
     margin: 0 auto;
     text-align: center;
     font-weight: bold;
     color: white;
-    
-}
-button:hover{
-    background-color:	#A0522D ;
     cursor: pointer;
     transition: background 0.3s;
 }
+
+button:hover {
+    background-color: #A0522D;
+}
   
 #estado {
-  margin-top: 0.5rem;
-  font-weight: bold;
-  text-align: center;
+    margin-top: 0.5rem;
+    font-weight: bold;
+    text-align: center;
 }
 
 #estado.error {
-  color: #c62828;
-  background-color: #ffcdd2;
-  padding: 0.5rem;
-  border-radius: 5px;
+    color: #c62828;
+    background-color: #ffcdd2;
+    padding: 0.5rem;
+    border-radius: 5px;
 }
 
 #estado.ok {
-  color: #2e7d32;
-  background-color: #c8e6c9;
-  padding: 0.5rem;
-  border-radius: 5px;
+    color: #2e7d32;
+    background-color: #c8e6c9;
+    padding: 0.5rem;
+    border-radius: 5px;
+}
+
+footer {
+    margin-top: auto;
+}
+
+@media (max-width: 768px) {
+    .form-group {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .form-group label {
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+
+    button {
+        width: 100%;
+    }
 }

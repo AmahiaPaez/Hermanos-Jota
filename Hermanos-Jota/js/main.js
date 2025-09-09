@@ -7,7 +7,7 @@
                 materiales: "Nogal macizo FSC®, herrajes de latón",
                 acabado: "Aceite natural ecológico",
                 precio: 89900,
-                imagen: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&h=300&fit=crop"
+                imagen: "imagenes/Aparador_Uspallata.png"
             },
             {
                 nombre: "Biblioteca Recoleta",
@@ -17,7 +17,7 @@
                 materiales: "Estructura de acero, estantes de roble",
                 acabado: "Laca mate ecológica",
                 precio: 34900,
-                imagen: "https://images.unsplash.com/photo-1594736797933-d0403ba2fe65?w=400&h=300&fit=crop"
+                imagen: "imagenes/Biblioteca_Recoleta.png"
             },
             {
                 nombre: "Butaca Mendoza",
@@ -27,7 +27,7 @@
                 materiales: "Guatambú macizo, tela bouclé",
                 acabado: "Cera vegetal, tapizado premium",
                 precio: 45900,
-                imagen: "https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?w=400&h=300&fit=crop"
+                imagen: "imagenes/Butaca_Mendoza.png"
             },
             {
                 nombre: "Sillón Copacabana",
@@ -37,7 +37,7 @@
                 materiales: "Cuero curtido vegetal, acero pintado",
                 acabado: "Cuero anilina premium",
                 precio: 67500,
-                imagen: "https://images.unsplash.com/photo-1506439773649-6e0eb8cfb237?w=400&h=300&fit=crop"
+                imagen: "imagenes/Sillon_Copacabana.png"
             },
             {
                 nombre: "Mesa de Centro Araucaria",
@@ -47,7 +47,7 @@
                 materiales: "Sobre de mármol Patagonia, patas de nogal",
                 acabado: "Mármol pulido, aceite natural en madera",
                 precio: 52300,
-                imagen: "https://images.unsplash.com/photo-1549497538-303791108f95?w=400&h=300&fit=crop"
+                imagen: "imagenes/Mesa_de_Centro_Araucaria.png"
             },
             {
                 nombre: "Mesa de Noche Aconcagua",
@@ -57,7 +57,7 @@
                 materiales: "Roble macizo FSC®, herrajes soft-close",
                 acabado: "Barniz mate de poliuretano",
                 precio: 18900,
-                imagen: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&h=300&fit=crop"
+                imagen: "imagenes/Mesa_de_Noche_Aconcagua.png"
             },
             {
                 nombre: "Sofá Patagonia",
@@ -67,7 +67,7 @@
                 materiales: "Madera de eucalipto certificada FSC®, lino",
                 acabado: "Lino 100% natural premium",
                 precio: 89500,
-                imagen: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=400&h=300&fit=crop"
+                imagen: "imagenes/Sofa_Patagonia.png"
             },
             {
                 nombre: "Mesa Comedor Pampa",
@@ -77,7 +77,7 @@
                 materiales: "Roble macizo FSC®, mecanismo alemán",
                 acabado: "Aceite-cera natural",
                 precio: 78900,
-                imagen: "https://images.unsplash.com/photo-1549497538-303791108f95?w=400&h=300&fit=crop"
+                imagen: "imagenes/Mesa_Comedor_Pampa.png"
             },
             {
                 nombre: "Sillas Córdoba",
@@ -87,7 +87,7 @@
                 materiales: "Contrachapado nogal, tubo de acero",
                 acabado: "Laca mate, pintura epoxi",
                 precio: 28900,
-                imagen: "https://images.unsplash.com/photo-1581539250439-c96689b516dd?w=400&h=300&fit=crop"
+                imagen: "imagenes/Sillas_Cordoba.png"
             },
             {
                 nombre: "Escritorio Costa",
@@ -97,7 +97,7 @@
                 materiales: "Bambú laminado, herrajes ocultos",
                 acabado: "Laca mate resistente",
                 precio: 32500,
-                imagen: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&h=300&fit=crop"
+                imagen: "imagenes/Escritorio_Costa.png"
             },
             {
                 nombre: "Silla de Trabajo Belgrano",
@@ -107,7 +107,7 @@
                 materiales: "Malla técnica, tejido reciclado",
                 acabado: "Base cromada, tapizado premium",
                 precio: 24900,
-                imagen: "https://images.unsplash.com/photo-1541558869434-2840d308329a?w=400&h=300&fit=crop"
+                imagen: "imagenes/Silla_de_Trabajo_Belgrano.png"
             }
         ];
 
